@@ -1,4 +1,5 @@
 HELP.md
+메모용
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
