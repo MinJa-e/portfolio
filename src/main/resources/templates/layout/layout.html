@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>이민재의 포트폴리오</title>
+</head>
+
+<body>
+<header th:replace="fragments/header :: header"></header>
+
+    <th:block layout:fragment="content">
+            <!--이 안에 메인 내용이 들어감-->a
+    </th:block>
+
+    <!--푸터-->
+<footer th:replace="fragments/footer :: footer"></footer>
+
+</body>
+</html>
