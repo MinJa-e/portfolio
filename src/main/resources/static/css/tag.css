@@ -1,0 +1,17 @@
+body {
+  font-family: "Noto Sans KR" !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+textarea {
+  resize: none;
+}
+
+pre {
+  font-family: "Noto Sans KR" !important;
+  font-size: 1rem;
+  color: gray;
+}

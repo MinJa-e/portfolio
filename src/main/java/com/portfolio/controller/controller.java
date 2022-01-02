@@ -10,4 +10,14 @@ public class controller {
     public String index(){
         return "index";
     }
+
+    @GetMapping("portfolio")
+    public String portfolio(){
+        return "views/portfolio";
+    }
+
+    @GetMapping("talk")
+    public String talk(){
+        return "views/talk";
+    }
 }

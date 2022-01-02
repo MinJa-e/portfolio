@@ -1,6 +1,7 @@
 HELP.md
 메모용
 .gradle
+template.html
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
