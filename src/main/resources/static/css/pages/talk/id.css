@@ -24,7 +24,7 @@
   width: 50vw;
   min-width: none;
   max-width: 760px;
-  min-height: 80vh;
+  max-height: 80vh;
   background: white;
   border-radius: 1rem;
   box-shadow: rgb(0 0 0 / 40%) 10px 10px 20px 0px;

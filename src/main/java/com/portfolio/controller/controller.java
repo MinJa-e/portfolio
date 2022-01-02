@@ -20,4 +20,9 @@ public class controller {
     public String talk(){
         return "views/talk";
     }
+
+    @GetMapping("warning")
+    public String warning(){
+        return "views/warning";
+    }
 }

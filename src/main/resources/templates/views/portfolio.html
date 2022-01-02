@@ -3,26 +3,16 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <head>
-    <style>
-#home {
-   position: relative;
-}
-#home:after {
-    content : "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('https://cdn.pixabay.com/photo/2019/08/14/15/15/macbook-4405973_960_720.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    opacity : 0.6;
-    z-index: -1;
-}
-    </style>
+    <link th:href="@{/css/pages/portfolio/id.css}" rel="stylesheet">
+    <link th:href="@{/css/pages/portfolio/class.css}" rel="stylesheet">
 </head>
 <main layout:fragment="content">
-    포트폴리오2
+    <div id="portfolio">
+        <div th:replace="fragments/portfolio/WhoisMe :: WhoIsMe"></div>
+        <div th:replace="fragments/portfolio/Skills :: Skills"></div>
+        <div th:replace="fragments/portfolio/Projects :: Projects"></div>
+        <div th:replace="fragments/portfolio/FAQ :: FAQ"></div>
+        <div th:replace="fragments/portfolio/Contact :: Contact"></div>
+    </div>
 </main>
 </html>

@@ -1,0 +1,48 @@
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: black;
+  border-color: black;
+/*  background-color: hsl(0deg 0% 30%);
+  border-color: hsl(0deg 0% 30%);*/
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: black;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.form-check-input:checked {
+  background-color: hsl(0deg 0% 30%);
+  border-color: hsl(0deg 0% 30%);
+}
+
+.form-check-input:focus {
+  /* border-color: #00000040; */
+  /* outline: 0; */
+  box-shadow: none;
+}
+.form-switch .form-check-input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  outline: 0;
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: rgb(0 0 0 / 65%);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 0 0 / 20%);
+}

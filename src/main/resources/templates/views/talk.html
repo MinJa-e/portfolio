@@ -4,6 +4,7 @@
       layout:decorate="~{layout/layout}">
 <head>
     <link th:href="@{/css/pages/talk/id.css}" rel="stylesheet">
+    <link th:href="@{/css/pages/talk/class.css}" rel="stylesheet">
 </head>
 
 <main layout:fragment="content">
@@ -13,14 +14,80 @@
             <h1 class="title">
                 방명록
             </h1>
-            <div id="talkMain">
-                <div class="text-start border-top pt-3 font-size-6"><!--테스트용 글 1개-->
-                    1 | 이민재 <span style="color:gray">(2012.12.27 17:31)</span>
-                    <pre class="mt-2 mb-0" style="max-height:6vh;white-space: pre-wrap;">테스트</pre>
+            <div id="talkMain"><!--md사이즈 기준으로 글 갯수 바꾸고 디테일 조정해보기-->
+                <div class="text-start border-top py-3 font-size-6"><!--테스트용 글 1개-->
+                    <div class="row">
+                        <div class="col-auto">
+                            1 | 이민재 <br>
+                            <span style="color:gray">(2012.12.27 17:31)</span>
+                        </div>
+                        <div class="col">
+                            <pre class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;">
+a
+b
+테스트</pre>
+                        </div>
+                    </div>
                 </div><!--테스트용 글 1개 끝-->
-                <div class="row mt-3">
+                <div class="text-start border-top py-3 font-size-6"><!--테스트용 글 1개-->
+                    <div class="row">
+                        <div class="col-auto">
+                            1 | 이민재 <br>
+                            <span style="color:gray">(2012.12.27 17:31)</span>
+                        </div>
+                        <div class="col">
+                            <pre class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;">
+a
+b
+테스트</pre>
+                        </div>
+                    </div>
+                </div><!--테스트용 글 1개 끝-->
+                <div class="text-start border-top py-3 font-size-6"><!--테스트용 글 1개-->
+                    <div class="row">
+                        <div class="col-auto">
+                            1 | 이민재 <br>
+                            <span style="color:gray">(2012.12.27 17:31)</span>
+                        </div>
+                        <div class="col">
+                            <pre class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;">
+a
+b
+테스트</pre>
+                        </div>
+                    </div>
+                </div><!--테스트용 글 1개 끝-->
+                <div class="text-start border-top py-3 font-size-6"><!--테스트용 글 1개-->
+                    <div class="row">
+                        <div class="col-auto">
+                            1 | 이민재 <br>
+                            <span style="color:gray">(2012.12.27 17:31)</span>
+                        </div>
+                        <div class="col">
+                            <pre class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;">
+a
+b
+테스트</pre>
+                        </div>
+                    </div>
+                </div><!--테스트용 글 1개 끝-->
+                <div class="text-start border-top py-3 font-size-6"><!--테스트용 글 1개-->
+                    <div class="row">
+                        <div class="col-auto">
+                            1 | 이민재 <br>
+                            <span style="color:gray">(2012.12.27 17:31)</span>
+                        </div>
+                        <div class="col">
+                            <pre class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;">
+a
+b
+테스트</pre>
+                        </div>
+                    </div>
+                </div><!--테스트용 글 1개 끝-->
+                <div class="row">
                     <div class="col">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control font-size-6" id="exampleFormControlTextarea1" rows="2"></textarea>
                     </div>
                     <div class="col-auto">
                         <!--스위치 적용이 안 되는데 나중에 해결하고 일단은 체크박스로 진행-->
