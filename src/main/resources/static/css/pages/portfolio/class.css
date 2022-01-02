@@ -1,0 +1,12 @@
+.bi {
+  margin-right: 0.5rem;
+}
+.btn{
+    border-radius:0.5rem 0.5rem 0 0!important;
+}
+.btn:focus {
+    box-shadow: none;
+}
+.card{
+    border-radius0px 0px 0.5rem 0.5rem!important;
+}

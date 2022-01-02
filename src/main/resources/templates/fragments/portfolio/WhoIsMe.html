@@ -1,0 +1,85 @@
+<div class="padding-section" id="whoIsMe" th:fragment="WhoIsMe">
+        <h1 class="title">
+                Who is me?
+        </h1>
+                <div class="row portfolio-width"><!--사진12 40-->
+                        <div class="col-3"><img th:src="@{/img/증명사진흰정사각형.jpg}" id="whoIsMePhoto" class="rounded-circle w-100 m-auto"
+                                style="border: 2.9px solid hsl(0deg 0% 0% / 30%);box-shadow: rgb(0 0 0 / 65%) 0px 0px 16px 0px;min-width:112px;max-width:168px;">
+                        </div>
+                        <div class="col">
+                                <div class="row pb-4 justify-content-center"><!--프로필 첫째 줄-->
+                                        <div class="col">
+                                                <h4 class="fw-bold"><i class="bi bi-person-fill"></i>이름</h4>
+                                                <div></div>
+                                                <p>이민재</p>
+                                        </div>
+                                        <div class="col">
+                                                <h4 class="fw-bold"><i class="bi bi-calendar-fill"></i>생년월일</h4>
+                                                <div></div>
+                                                <p>1995.10.14</p>
+                                        </div>
+                                </div>
+                                <div class="row pb-4 justify-content-md-center"><!--프로필 둘째 줄-->
+                                        <div class="col">
+                                                <h4 class="fw-bold"><i class="bi bi-envelope-fill"></i>이메일</h4>
+                                                <div></div>
+                                                <p>leeniesta@naver.com</p>
+                                        </div>
+                                        <div class="col">
+                                                <h4 class="fw-bold"><i class="bi bi-geo-alt-fill"></i>거주지</h4>
+                                                <div></div>
+                                                <p>부산광역시 해운대구 반여1동</p>
+                                        </div>
+                                        <!-- <b-col>
+                                          <h4 class="fw-bold"><b-icon icon="emoji-laughing" style="width: 24px; height: 24px;"></b-icon>생년월일</h4>
+                                          <div></div>
+                                          <p>1995.10.14</p>
+                                        </b-col>
+                                        <b-col>
+                                          <h4 class="fw-bold"><b-icon icon="emoji-laughing" style="width: 24px; height: 24px;"></b-icon>이메일</h4>
+                                          <div></div>
+                                          <p>leeniesta@naver.com</p>
+                                        </b-col> -->
+                                </div>
+                        </div>
+                        <div id="whoIsMeIntro"><!--간략소개-->
+                                <!-- Using value -->
+<!--                                <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">-->
+<!--                                        <div class="accordion-item">-->
+<!--                                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">-->
+<!--                                                        <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">-->
+<!--                                                                <span>간략소개</span>-->
+<!--                                                        </button>-->
+<!--                                                </h2>-->
+<!--                                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">-->
+<!--                                                        <div class="accordion-body">-->
+<!--                                                                <pre>-->
+<!--안녕하세요!-->
+<!--헬로!</pre>-->
+<!--                                                        </div>-->
+<!--                                                </div>-->
+<!--                                        </div>-->
+<!--                                </div>-->
+                                <!--                        <p>-->
+                                <!--                                <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
+                                <!--                                        Link with href-->
+                                <!--                                </a>-->
+                                                                <button style="border-radius:0.5rem 0.5rem 0 0;"
+                                                                        class="btn btn-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                                        간략소개
+                                                                </button>
+                                <!--                        </p>-->
+                                                        <div  style="border-radius: 0 0 0.5rem 0.5rem;"
+                                                              class="collapse" id="collapseExample">
+                                                                <div class="card card-body">
+                                                                        <p>
+                                                                                안녕하세요!<br>
+                                                                                헬로!<br>
+                                                                        </p>
+                                                                </div>
+                        </div>
+                        </div>
+                </div>
+
+</div>
+

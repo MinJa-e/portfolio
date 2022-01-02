@@ -1,0 +1,22 @@
+.mp-reset {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.title {
+  text-align: center;
+  padding-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  color: black;
+  font-family: "Black Han Sans", "Noto Sans KR", sans-serif;
+}
+
+.padding-section {
+  padding-bottom: 60px !important;
+}
+
+.portfolio-width{
+    min-width:560px;
+    max-width:894px;
+    margin:0 auto;
+}
