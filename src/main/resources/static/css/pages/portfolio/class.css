@@ -1,5 +1,46 @@
-.bi {
-  margin-right: 0.5rem;
+
+#whoIsMe > div > div > div > div > h4 > .bi {
+    margin-right: 0.5rem;
+}
+
+#contact > div > div > div > a > .bi::before, #contact > div > div > div > .bi, #contact > div > div > div > a > img {
+    color:black;
+  margin-right: 1rem;
+  font-size: 1.6rem;
+  height: 1.6rem;
+}
+
+#contact > div > div > div {
+  padding:0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contact > div > div > div > * {
+    margin:0;
+}
+
+#contact > div > .row {
+    margin-bottom: 0.7rem;
+    height:2.25rem;
+}
+
+#contact > div > div > div > button {
+    color: hsl(0deg 0% 30%);
+}
+
+.btn-mj{
+    background-color:hsl(208deg 64% 80%);
+    border-color:hsl(208deg 64% 80%);
+}
+
+.btn-mj:hover{
+    background-color:hsl(208deg 64% 68%);
+    border-color:hsl(208deg 64% 68%);
+}
+.btn-warning:hover{
+    background-color:hsl(45deg 100% 45%);
+    border-color:hsl(45deg 100% 45%);
 }
 
 .skillsIcon {
@@ -109,7 +150,7 @@
 }
 
 .detailCol > div {
-  margin-bottom: 0.35rem !important;
+  margin-bottom: 0.4rem !important;
 }
 
 .accordion{

@@ -1,3 +1,7 @@
+#headerRight > a > .bi {
+  margin-right: 0.5rem;
+}
+
 .mp-reset {
   margin: 0px !important;
   padding: 0px !important;
@@ -19,4 +23,20 @@
     min-width:560px;
     max-width:894px;
     margin:0 auto;
+}
+
+.btn-group-vertical > a{
+    font-weight: bold;
+    color:hsl(0deg 0% 31.1%);
+    text-align:start;
+    box-shadow: none!important;
+    border-color: hsl(0deg 0% 36% / 99%);
+}
+
+.btn-group-vertical > a:hover, .btn-group-vertical > a:focus{
+    color:hsl(0deg 0% 0%);
+}
+
+.navbar-nav > .nav-item > .nav-link:hover, .navbar-nav > .nav-item > .nav-link:focus {
+    color: rgb(255 255 255 / 99%);
 }

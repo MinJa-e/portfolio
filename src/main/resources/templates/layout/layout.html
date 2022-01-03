@@ -18,7 +18,7 @@
     <link th:href="@{/css/variable.css}" rel="stylesheet">
 </head>
 
-<body>
+<body style="position:relative;">
 <header th:replace="fragments/header :: header"/>
 
     <th:block id="content" layout:fragment="content">
@@ -26,7 +26,8 @@
     </th:block>
 
     <!--푸터-->
-<footer th:replace="fragments/footer :: footer"></footer>
+<footer th:replace="fragments/footer :: footer"/>
+<footer th:replace="fragments/after :: upBtn"/>
 
 </body>
 </html>

@@ -8,11 +8,12 @@
 </head>
 <main layout:fragment="content">
     <div id="portfolio">
-        <div th:replace="fragments/portfolio/WhoisMe :: WhoIsMe"></div>
-        <div th:replace="fragments/portfolio/Skills :: Skills"></div>
-        <div th:replace="fragments/portfolio/Projects :: Projects"></div>
-        <div th:replace="fragments/portfolio/FAQ :: FAQ"></div>
-        <div th:replace="fragments/portfolio/Contact :: Contact"></div>
+        <div th:replace="fragments/portfolio/WhoisMe :: WhoIsMe"/>
+        <div th:replace="fragments/portfolio/Skills :: Skills"/>
+        <div th:replace="fragments/portfolio/Projects :: Projects"/>
+        <div th:replace="fragments/portfolio/FAQ :: FAQ"/>
+        <div th:replace="fragments/portfolio/Contact :: Contact"/>
     </div>
+    <div th:replace="fragments/after :: remote"/>
 </main>
 </html>
