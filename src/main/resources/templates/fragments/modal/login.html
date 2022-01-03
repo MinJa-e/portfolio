@@ -1,0 +1,91 @@
+<div th:fragment="login">
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel" style="font-weight: bold;">로그인</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">아이디</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                    </div>
+                    <div class="mb-1">
+                        <label for="exampleInputPassword1" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="p-0 mb-0 form-check d-flex justify-content-between">
+                        <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal"
+                           style="
+                        cursor: pointer;
+    text-decoration: underline;"
+                        >간단 가입</a>
+<!--                        <div>-->
+<!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--                            <label class="form-check-label" for="exampleCheck1">아이디 기억하기</label>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">취소</button>
+                    <button type="button" class="btn btn-primary">로그인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2" style="font-weight: bold;">회원가입</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">아이디</label>
+                        <input type="text" class="form-control" id="exampleInputId" aria-describedby="idHelp">
+                        <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPasswordChk1" class="form-label">비밀번호 확인</label>
+                        <input type="password" class="form-control" id="exampleInputPasswordChk1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputNickname" class="form-label">닉네임</label>
+                        <input type="text" class="form-control" id="exampleInputNickname">
+                    </div>
+                    <div class="p-0 mb-0 form-check d-flex justify-content-between">
+                        <a data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal"
+                           style="
+                        cursor: pointer;
+    text-decoration: underline;"
+                        >뒤로</a>
+                        <!--                        <div>-->
+                        <!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+                        <!--                            <label class="form-check-label" for="exampleCheck1">아이디 기억하기</label>-->
+                        <!--                        </div>-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">취소</button>
+                    <button type="button" class="btn btn-primary">가입</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--로그인 버튼은 밑의 형식처럼 만들기-->
+<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
