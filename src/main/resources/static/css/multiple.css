@@ -40,3 +40,43 @@
 .navbar-nav > .nav-item > .nav-link:hover, .navbar-nav > .nav-item > .nav-link:focus {
     color: rgb(255 255 255 / 99%);
 }
+
+.btnWho{
+    background:hsl(0deg 0% 100%);
+}
+
+.btnWho:hover{
+    background:hsl(0deg 0% 96.8%);
+}
+
+.btnSkills{
+    background:hsl(58deg 65% 91%)
+}
+
+.btnSkills:hover{
+    background:hsl(58deg 65% 83%)
+}
+
+.btnProjects{
+    background:hsl(182deg 65% 91%)
+}
+
+.btnProjects:hover{
+    background:hsl(182deg 65% 83%)
+}
+
+.btnFAQ{
+    background:hsl(112deg 65% 91%)
+}
+
+.btnFAQ:hover{
+    background:hsl(112deg 65% 83%)
+}
+
+.btnContact{
+    background:hsl(208deg 65% 91%)
+}
+
+.btnContact:hover{
+    background:hsl(208deg 65% 83%)
+}
