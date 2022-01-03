@@ -1,93 +1,62 @@
 <div class="padding-section" id="skills" th:fragment="Skills">
-        <div class="text-center w-100 padding-section" id="skills">
-                <h1 class="mp-title" style="font-family: 'Black Han Sans','Noto Sans KR', sans-serif;">
+
+                <h1 class="title">
                         Skills
                 </h1>
-                <b-row style="min-width:560px;max-width:894px;margin:0 auto;">
 
+                <!--팝오버로 설명 삽입하기-->
+                <div class="row portfolio-width">
 
-                        <div class="skillsArcodian">
-                                <b-button
-                                        class="skillsArcodianHeader rounded-top"
-                                        :class="frontendArcodian ? null : 'collapsed'"
-                                        :aria-expanded="frontendArcodian ? 'true' : 'false'"
-                                        aria-controls="collapse-4"
-                                        @click="frontendArcodian = !frontendArcodian"
-                                >
+                        <div class="collapseAll">
+                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsFrontend" aria-expanded="true" aria-controls="collapseExample">
                                         Front-end
-                                </b-button>
-                                <b-collapse id="collapse-4" v-model="frontendArcodian" class="p-0">
-                                        <b-card class="skillsArcodianBody rounded-bottom">
-                                                <img src="@/assets/skills/html.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/css.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/js.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/vue.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/bootstrap.png" class="skillsIcon"/>
-                                                <!--
-                                                HTML
-                                                CSS
-                                                JS
-                                                BootStrap
-                                                VUE
-                                                -->
-                                        </b-card>
-                                </b-collapse>
+                                </button>
+                                <div class="collapse show collapseBody" id="skillsFrontend">
+                                        <div class="card card-body">
+                                                <img th:src="@{/img/skills/html.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/css.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/js.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/bootstrap.png}" class="skillsIcon"/>
+                                        </div>
+                                </div>
                         </div>
 
-                        <div class="skillsArcodian">
-                                <b-button
-                                        class="skillsArcodianHeader rounded-top"
-                                        :class="backendArcodian ? null : 'collapsed'"
-                                        :aria-expanded="backendArcodian ? 'true' : 'false'"
-                                        aria-controls="backendArcodian"
-                                        @click="backendArcodian = !backendArcodian"
-                                >
+                        <div class="collapseAll">
+                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsBackend" aria-expanded="true" aria-controls="collapseExample">
                                         Back-end
-                                </b-button>
-                                <b-collapse id="backendArcodian" v-model="backendArcodian" class="p-0">
-                                        <b-card class="skillsArcodianBody rounded-bottom">
-                                                <img src="@/assets/skills/java.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/springBoot.png" class="skillsIcon"/>
-                                                <!--
-                                                Java
-                                                Spring Boot
-                                                -->
-                                        </b-card>
-                                </b-collapse>
+                                </button>
+                                <div class="collapse show collapseBody" id="skillsBackend">
+                                        <div class="card card-body">
+                                                <img th:src="@{/img/skills/java.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/springBoot.png}" class="skillsIcon"/>
+                                        </div>
+                                </div>
                         </div>
 
-                        <div class="skillsArcodian">
-                                <b-button
-                                        class="skillsArcodianHeader rounded-top"
-                                        :class="othersArcodian ? null : 'collapsed'"
-                                        :aria-expanded="othersArcodian ? 'true' : 'false'"
-                                        aria-controls="othersArcodian"
-                                        @click="othersArcodian = !othersArcodian"
-                                >
+                        <div class="collapseAll">
+                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsOthers" aria-expanded="true" aria-controls="collapseExample">
                                         Others
-                                </b-button>
-                                <b-collapse id="othersArcodian" v-model="othersArcodian" class="p-0">
-                                        <b-card class="skillsArcodianBody rounded-bottom">
-                                                <img src="@/assets/skills/mysql.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/oracle.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/git.png" class="skillsIcon"/>
-                                                <img src="@/assets/skills/github.png" id="githubIcon" class="skillsIcon"/>
-
-                                                <b-popover target="githubIcon" triggers="hover" placement="bottom">
-                                                        <template #title>깃허브</template>
-                                                        실험
-                                                        <!--https://bootstrap-vue.org/docs/components/popover 팝오버 참고용-->
-                                                </b-popover>
-                                                <!--
-                                                mySQL
-                                                Oracle
-                                                Git
-                                                Github
-                                                (VSC, IntelliJ, Ecllipse)
-                                                -->
-                                        </b-card>
-                                </b-collapse>
+                                </button>
+                                <div  class="collapse show collapseBody" id="skillsOthers">
+                                        <div class="card card-body">
+                                                <img th:src="@{/img/skills/mysql.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/oracle.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/git.png}" class="skillsIcon"/>
+                                                <img th:src="@{/img/skills/github.png}" class="skillsIcon"/>
+                                        </div>
+                                </div>
                         </div>
-                </b-row>
-        </div>
+
+                        <div class="collapseAll">
+                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsInteresting" aria-expanded="true" aria-controls="collapseExample">
+                                        Interesting
+                                </button>
+                                <div class="collapse show collapseBody" id="skillsInteresting">
+                                        <div class="card card-body">
+                                                <img th:src="@{/img/skills/vue.png}" class="skillsIcon"/>
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
 </div>

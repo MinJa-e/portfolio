@@ -37,10 +37,10 @@
   /* opacity : 0.6; */
   z-index: -1;
 }
-#Projects {
+#projects {
   position: relative;
 }
-#Projects:after {
+#projects:after {
   content: "";
   display: block;
   position: absolute;
@@ -71,10 +71,10 @@
   /* opacity : 0.6; */
   z-index: -1;
 }
-#Contact {
+#contact {
   position: relative;
 }
-#Contact:after {
+#contact:after {
   content: "";
   display: block;
   position: absolute;
@@ -88,12 +88,6 @@
   /* opacity : 0.6; */
   z-index: -1;
 }
-
-#whoIsMeIntro {
-    margin-top: 32px !important;
-  padding: 0px !important;
-  box-shadow: rgb(0 0 0 / 20%) 5px 5px 20px 0px;
-}
-#whoIsMePhoto:hover {
-  box-shadow: rgb(0 0 0 / 65%) 0px 0px 16px 6px !important;
+#whoIsMePhoto:hover{
+  box-shadow: rgb(0 0 0 / 65%) 0px 0px 16px 6px!important;
 }
