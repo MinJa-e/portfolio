@@ -29,7 +29,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: lightskyblue;
+  background-color: hsl(58deg 64% 91%);
   /* background-image: url('https://cdn.pixabay.com/photo/2019/08/14/15/15/macbook-4405973_960_720.jpg');
     background-size: cover; */
   width: 100%;
@@ -46,7 +46,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: lightseagreen;
+  background-color: hsl(181deg 64% 91%);
   /* background-image: url('https://cdn.pixabay.com/photo/2019/08/14/15/15/macbook-4405973_960_720.jpg');
     background-size: cover; */
   width: 100%;
@@ -63,7 +63,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: lightsalmon;
+  background-color: hsl(113deg 64% 91%);
   /* background-image: url('https://cdn.pixabay.com/photo/2019/08/14/15/15/macbook-4405973_960_720.jpg');
     background-size: cover; */
   width: 100%;
@@ -80,7 +80,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: lightgreen;
+  background-color: hsl(209deg 64% 91%);
   /* background-image: url('https://cdn.pixabay.com/photo/2019/08/14/15/15/macbook-4405973_960_720.jpg');
     background-size: cover; */
   width: 100%;
