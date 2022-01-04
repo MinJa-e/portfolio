@@ -20,6 +20,7 @@
 
 <body>
 <header th:replace="fragments/header :: header"/>
+<div id="bodyTop" style="opacity:0%;transition: 0.45s linear 0s;"></div>
 
     <th:block id="content" layout:fragment="content">
             <!--이 안에 메인 내용이 들어감-->
@@ -27,6 +28,8 @@
 
     <!--푸터-->
 <footer th:replace="fragments/footer :: footer"/>
+<div th:replace="fragments/after :: alertWarning"/>
 
+</div>
 </body>
 </html>
