@@ -80,3 +80,13 @@
 .btnContact:hover{
     background:hsl(208deg 65% 83%)
 }
+
+.dropdown-menu {
+    min-width: 7.4rem;
+}
+
+#headerRight > .btn-group > button {
+    box-shadow:none;
+    border:none;
+    background:hsl(0deg 0% 0% / 0%);
+}
