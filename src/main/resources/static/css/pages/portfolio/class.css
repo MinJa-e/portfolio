@@ -205,3 +205,22 @@
     color: #fff;
     background-color: hsl(182deg 65% 54%);
 }
+
+.popover-element{
+        position: inherit!important;
+        border:none!important;
+}
+
+.popover{
+  font-family: "Noto Sans KR" !important;
+  z-index:0!important;
+}
+
+.popover-header{
+    font-weight:bold;
+    font-size:1rem;
+}
+
+.popover-body{
+    font-size:0.875rem;
+}

@@ -1,62 +1,105 @@
 <div class="padding-section" id="skills" th:fragment="Skills">
+  <h1 class="title">Skills</h1>
 
-                <h1 class="title">
-                        Skills
-                </h1>
+  <!--팝오버로 설명 삽입하기-->
+  <div class="row portfolio-width">
+    <div class="collapseAll">
+      <button
+        class="btn btn-light collapseHead"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#skillsFrontend"
+        aria-expanded="true"
+        aria-controls="collapseExample"
+      >
+        Front-end
+      </button>
+      <div class="collapse show collapseBody" id="skillsFrontend">
+        <div class="card card-body">
+            <img th:src="@{/img/skills/html.png}" class="skillsIcon popover popover-element"
+          tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="HTML" data-bs-content="HTML"/>
+          <img th:src="@{/img/skills/css.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="CSS" data-bs-content="CSS"/>
+          <img th:src="@{/img/skills/js.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="자바스크립트" data-bs-content="자바스크립트"/>
+          <img th:src="@{/img/skills/bootstrap.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="부트스트랩" data-bs-content="부트스트랩"/>
+        </div>
+      </div>
+    </div>
 
-                <!--팝오버로 설명 삽입하기-->
-                <div class="row portfolio-width">
+    <div class="collapseAll">
+      <button
+        class="btn btn-light collapseHead"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#skillsBackend"
+        aria-expanded="true"
+        aria-controls="collapseExample"
+      >
+        Back-end
+      </button>
+      <div class="collapse show collapseBody" id="skillsBackend">
+        <div class="card card-body">
+          <img th:src="@{/img/skills/java.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="자바" data-bs-content="자바"/>
+          <img th:src="@{/img/skills/springBoot.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="스프링부트" data-bs-content="스프링부트"/>
+        </div>
+      </div>
+    </div>
 
-                        <div class="collapseAll">
-                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsFrontend" aria-expanded="true" aria-controls="collapseExample">
-                                        Front-end
-                                </button>
-                                <div class="collapse show collapseBody" id="skillsFrontend">
-                                        <div class="card card-body">
-                                                <img th:src="@{/img/skills/html.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/css.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/js.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/bootstrap.png}" class="skillsIcon"/>
-                                        </div>
-                                </div>
-                        </div>
+    <div class="collapseAll">
+      <button
+        class="btn btn-light collapseHead"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#skillsOthers"
+        aria-expanded="true"
+        aria-controls="collapseExample"
+      >
+        Others
+      </button>
+      <div class="collapse show collapseBody" id="skillsOthers">
+        <div class="card card-body">
+          <img th:src="@{/img/skills/mysql.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="mySQL" data-bs-content="mySQL"/>
+          <img th:src="@{/img/skills/oracle.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="오라클" data-bs-content="오라클"/>
+          <img th:src="@{/img/skills/git.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="깃" data-bs-content="깃"/>
+          <img th:src="@{/img/skills/github.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="깃허브" data-bs-content="깃허브"/>
+        </div>
+      </div>
+    </div>
 
-                        <div class="collapseAll">
-                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsBackend" aria-expanded="true" aria-controls="collapseExample">
-                                        Back-end
-                                </button>
-                                <div class="collapse show collapseBody" id="skillsBackend">
-                                        <div class="card card-body">
-                                                <img th:src="@{/img/skills/java.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/springBoot.png}" class="skillsIcon"/>
-                                        </div>
-                                </div>
-                        </div>
+    <div class="collapseAll">
+      <button
+        class="btn btn-light collapseHead"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#skillsInteresting"
+        aria-expanded="true"
+        aria-controls="collapseExample"
+      >
+        Interesting
+      </button>
+      <div class="collapse show collapseBody" id="skillsInteresting">
+        <div class="card card-body">
+          <img th:src="@{/img/skills/vue.png}" class="skillsIcon popover popover-element"
+               tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="뷰" data-bs-content="뷰"/>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                        <div class="collapseAll">
-                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsOthers" aria-expanded="true" aria-controls="collapseExample">
-                                        Others
-                                </button>
-                                <div  class="collapse show collapseBody" id="skillsOthers">
-                                        <div class="card card-body">
-                                                <img th:src="@{/img/skills/mysql.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/oracle.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/git.png}" class="skillsIcon"/>
-                                                <img th:src="@{/img/skills/github.png}" class="skillsIcon"/>
-                                        </div>
-                                </div>
-                        </div>
+        <!--팝오버용 스크립트-->
+        <script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+          </script>
 
-                        <div class="collapseAll">
-                                <button class="btn btn-light collapseHead" type="button" data-bs-toggle="collapse" data-bs-target="#skillsInteresting" aria-expanded="true" aria-controls="collapseExample">
-                                        Interesting
-                                </button>
-                                <div class="collapse show collapseBody" id="skillsInteresting">
-                                        <div class="card card-body">
-                                                <img th:src="@{/img/skills/vue.png}" class="skillsIcon"/>
-                                        </div>
-                                </div>
-                        </div>
-
-                </div>
 </div>
