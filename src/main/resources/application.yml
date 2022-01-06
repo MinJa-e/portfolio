@@ -4,3 +4,6 @@ spring:
     url: jdbc:mysql://localhost:3306/example?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
     password: 1479
+
+mybatis:
+  mapper-locations: classpath:mapper/**.xml

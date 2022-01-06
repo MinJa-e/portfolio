@@ -1,6 +1,6 @@
 package com.portfolio.domain;
 
-public class Member {
+public class MemberDTO {
 
     private Long no;
     private String id;
