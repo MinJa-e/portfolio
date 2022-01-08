@@ -19,9 +19,13 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void login(String id, String password) {
-            if(memberMapper.login(id) == password){
+        System.out.println(memberMapper.login(id));
+        System.out.println(password);
+            if( memberMapper.login(id).equals(password) ){
                 System.out.println("로그인 성공");
-            }
+            }else{
+            System.out.println("로그인 실패");
+        }
     }
 
 
