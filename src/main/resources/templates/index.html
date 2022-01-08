@@ -18,7 +18,8 @@
             </p>
             <a type="button" class="btn btn-danger rounded-pill my-1 font-size-6 shadow" href="portfolio">포트폴리오 보러가기</a><br>
             <a type="button" class="btn btn-success rounded-pill my-1 font-size-6 shadow" onclick="alertWarning()">창작물 보러가기</a><br>
-            <a type="button" class="btn btn-primary rounded-pill my-1 font-size-6 shadow" href="talk">소통 하러가기</a>
+            <a th:if="${session.login == null}" type="button" class="btn btn-primary rounded-pill my-1 font-size-6 shadow" data-bs-toggle="modal" href="#exampleModalToggle">소통 하러가기</a>
+            <a th:if="${session.login != null}" type="button" class="btn btn-primary rounded-pill my-1 font-size-6 shadow" href="talk">소통 하러가기</a>
         </div>
     </div>
 </main>
