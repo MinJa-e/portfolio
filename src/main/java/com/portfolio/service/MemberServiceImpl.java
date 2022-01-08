@@ -16,4 +16,13 @@ public class MemberServiceImpl implements MemberService{
     public void join(MemberDTO memberDTO) {
         memberMapper.insert(memberDTO);
     }
+
+    @Override
+    public void login(String id, String password) {
+            if(memberMapper.login(id) == password){
+                System.out.println("로그인 성공");
+            }
+    }
+
+
 }

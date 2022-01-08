@@ -7,4 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberMapper {
 
     void insert(MemberDTO memberDTO);
+    String login(String id);
 }

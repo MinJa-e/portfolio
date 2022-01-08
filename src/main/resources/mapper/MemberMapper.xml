@@ -6,4 +6,9 @@
         INSERT INTO member (id, password,nickname)
         VALUES ( #{id},#{password},#{nickname} )
     </insert>
+    <select id="login" resultType="String">
+        SELECT  password
+        FROM    member
+        WHERE   id = #{id}
+    </select>
 </mapper>

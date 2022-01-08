@@ -14,10 +14,16 @@ public class ApiMemberController {
 
     private final MemberService memberService;
 
-    @PostMapping
+    @PostMapping("/join")
     public String join(MemberDTO memberDTO) {
         memberService.join(memberDTO);
-        return "index";
+        return "redirect:/";
+    }
+
+    @PostMapping("/login")
+    public String login(String id, String password) {
+        memberService.login(id, password);
+        return "redirect:/";
     }
 
 }
