@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portfolio.mapper.member.MemberMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="talkNum">
+        INSERT INTO talk (nickname,date,talkLock)
+        VALUES ( #{nickname},#{date},#{talkLock} )
+    </insert>
+    <select id="login" resultType="String">
+        SELECT  password
+        FROM    member
+        WHERE   id = #{id}
+    </select>
+</mapper>
