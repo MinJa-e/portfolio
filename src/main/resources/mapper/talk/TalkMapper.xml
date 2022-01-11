@@ -1,14 +1,38 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.portfolio.mapper.member.MemberMapper">
+<mapper namespace="com.portfolio.mapper.talk.TalkMapper">
     <insert id="insert" useGeneratedKeys="true" keyProperty="talkNum">
-        INSERT INTO talk (nickname,date,talkLock)
-        VALUES ( #{nickname},#{date},#{talkLock} )
+        INSERT INTO talk (nickname,date,talkContent,talkLock)
+        VALUES ( #{nickname},now(),#{talkContent},#{talkLock} )
     </insert>
-    <select id="login" resultType="String">
-        SELECT  password
-        FROM    member
-        WHERE   id = #{id}
+    <select id="getList" parameterType="com.portfolio.domain.talk.TalkDTO" resultType="com.portfolio.domain.talk.TalkDTO">
+        SELECT
+        talkNum,
+        nickname,
+        date,
+        talkContent,
+        talkLock
+        FROM    talk
+        ORDER BY talkNum DESC
     </select>
+    <select id="get" parameterType="int" resultType="com.portfolio.domain.talk.TalkDTO">
+        SELECT
+        talkNum,
+        nickname,
+        date,
+        talkContent,
+        talkLock
+        FROM    talk
+        WHERE   talkNum = #{talkNum}
+    </select>
+    <update id="update" parameterType="com.portfolio.domain.talk.TalkDTO">
+        UPDATE talk (nickname,talkContent,talkLock)
+        SET ( #{nickname},#{talkContent},#{talkLock} )
+        WHERE   talkNum = #{talkNum}
+    </update>
+    <delete id="delete" parameterType="int">
+        DELETE talk
+        WHERE   talkNum = #{talkNum}
+    </delete>
 </mapper>

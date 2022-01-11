@@ -1,10 +1,16 @@
 package com.portfolio.controller;
 
+import com.portfolio.service.talk.TalkService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+@RequiredArgsConstructor
 public class controller {
+
+    private final TalkService talkService;
 
     @GetMapping
     public String index(){
@@ -17,7 +23,10 @@ public class controller {
     }
 
     @GetMapping("talk")
-    public String talk(){
+    public String talkList(Model model) {
+
+        model.addAttribute("list",talkService.getList());
+
         return "views/talk";
     }
 

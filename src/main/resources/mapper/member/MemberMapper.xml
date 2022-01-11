@@ -2,7 +2,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.portfolio.mapper.member.MemberMapper">
-    <insert id="insert" useGeneratedKeys="true" keyProperty="no">
+    <insert id="join" useGeneratedKeys="true" keyProperty="no">
         INSERT INTO member (id, password,nickname)
         VALUES ( #{id},#{password},#{nickname} )
     </insert>

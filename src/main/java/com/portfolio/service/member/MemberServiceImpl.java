@@ -14,7 +14,7 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void join(MemberDTO memberDTO) {
-        memberMapper.insert(memberDTO);
+        memberMapper.join(memberDTO);
     }
 
     @Override

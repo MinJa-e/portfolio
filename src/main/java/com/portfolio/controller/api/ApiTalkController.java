@@ -1,12 +1,10 @@
 package com.portfolio.controller.api;
 
-import com.portfolio.domain.member.MemberDTO;
 import com.portfolio.domain.talk.TalkDTO;
 import com.portfolio.service.talk.TalkService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api/talks")
@@ -19,6 +17,21 @@ public class ApiTalkController {
     public String create(TalkDTO talkDTO) {
         talkService.create(talkDTO);
         return "redirect:/talk";
+    }
+
+    @GetMapping("/{talkNum}")
+    public TalkDTO get(@PathVariable int talkNum){
+        return talkService.get(talkNum);
+    }
+
+    @PutMapping("/{talkNum}")
+    public void update(TalkDTO talkDTO) {
+        talkService.update(talkDTO);
+    }
+
+    @DeleteMapping
+    public void delete(int talkNum) {
+        talkService.delete(talkNum);
     }
 
 }

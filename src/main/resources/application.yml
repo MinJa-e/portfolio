@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/portfolio?serverTimezone=UTC&useSSL=false&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/portfolio?serverTimezone=Asia/Seoul&useSSL=false&characterEncoding=UTF-8
     username: root
     password: 1479
 
 mybatis:
-  mapper-locations: classpath:mapper/**.xml
+  mapper-locations: classpath:mapper/**/*.xml
