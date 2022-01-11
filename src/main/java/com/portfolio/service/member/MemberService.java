@@ -1,8 +1,6 @@
-package com.portfolio.service;
+package com.portfolio.service.member;
 
-import com.portfolio.domain.MemberDTO;
-
-import javax.servlet.http.HttpServletRequest;
+import com.portfolio.domain.member.MemberDTO;
 
 public interface MemberService {
 

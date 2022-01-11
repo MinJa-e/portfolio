@@ -1,7 +1,7 @@
 package com.portfolio.controller.api;
 
-import com.portfolio.domain.MemberDTO;
-import com.portfolio.service.MemberService;
+import com.portfolio.domain.member.MemberDTO;
+import com.portfolio.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

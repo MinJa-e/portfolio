@@ -1,6 +1,6 @@
 package com.portfolio.mapper.member;
 
-import com.portfolio.domain.MemberDTO;
+import com.portfolio.domain.member.MemberDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

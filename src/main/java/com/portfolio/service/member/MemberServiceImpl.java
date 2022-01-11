@@ -1,13 +1,10 @@
-package com.portfolio.service;
+package com.portfolio.service.member;
 
 
-import com.portfolio.domain.MemberDTO;
+import com.portfolio.domain.member.MemberDTO;
 import com.portfolio.mapper.member.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @Service
 @RequiredArgsConstructor
