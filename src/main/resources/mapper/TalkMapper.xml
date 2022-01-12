@@ -24,6 +24,15 @@
     ]]>
     </select>
 
+    <select id="countTalkList" resultType="Integer">
+        <![CDATA[
+        SELECT
+            count(*)
+        FROM
+            talk
+    ]]>
+    </select>
+
     <select id="get" parameterType="int" resultType="com.portfolio.domain.talk.TalkDTO">
         SELECT
         talkNum,

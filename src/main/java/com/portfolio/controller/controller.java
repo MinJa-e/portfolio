@@ -32,7 +32,7 @@ public class controller {
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(criteria);
-        pageMaker.setTotalCount(100);//총게시글수 조횐데 아직 로직 구현x여서 임의로 넣음
+        pageMaker.setTotalCount(talkService.countTalkList());//총게시글수 조횐데 아직 로직 구현x여서 임의로 넣음
 
         List<TalkDTO> List = talkService.getList(criteria);
 

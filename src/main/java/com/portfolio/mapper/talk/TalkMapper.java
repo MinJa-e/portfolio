@@ -13,6 +13,8 @@ public interface TalkMapper {
 
     List<TalkDTO> getList(Criteria criteria);
 
+    int countTalkList();
+
     TalkDTO get(int talkNum);
 
     void update(TalkDTO talkDTO);

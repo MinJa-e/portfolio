@@ -23,20 +23,50 @@
                 <div th:each="talk: ${list}" class="text-start border-top py-3 font-size-6"><!--테스트용 글 1개-->
                     <div class="row">
                         <div class="col-auto">
-                            <span th:text="${talk.talkNum}">1</span> | <span th:text="${talk.nickname}">이민재</span> <br>
+                            <span th:text="${talk.talkNum}">1</span> |
+                            <th:block th:if="${talk.talkLock != true}">
+                                <span th:text="${talk.nickname}"/>
+                            </th:block>
+                            <th:block th:unless="${talk.talkLock != true}">
+                                <span class="text-secondary" th:if="${session.login == 'leeniesta'}" th:text="${talk.nickname}"/>
+                                <th:block th:unless="${session.login == 'leeniesta'}">
+                                    <span class="text-secondary" th:if="${talk.nickname == session.login}" th:text="${talk.nickname}"/>
+                                </th:block>
+                                <i class='bi bi-lock-fill text-secondary'></i>
+                            </th:block>
+                            <br>
                             <span th:text="${#temporals.format(talk.date, 'yyyy-MM-dd HH:mm')}" style="color:gray">(2012.12.27 17:31)</span><br>
-                            <a href="#" onclick="alertWarning()">댓글</a>
-                            <a th:href="@{/api/talks/delete/{talkNum}(talkNum=${talk.talkNum})}">삭제</a>
-                            <a href="#" onclick="alertWarning()">수정</a>
-<!--                            <a href="#">댓글</a>-->
-<!--                            <a href="#">삭제</a>-->
-<!--                            <a href="#">수정</a>-->
+                            <th:block th:if="${talk.talkLock != true}">
+                                <a href="#" onclick="alertWarning()">댓글</a>
+                            </th:block>
+                            <th:block th:unless="${talk.talkLock != true}">
+                                <a th:if="${talk.nickname == session.login || session.login == 'leeniesta'}"href="#" onclick="alertWarning()">댓글</a>
+                            </th:block>
+                            <a th:if="${talk.nickname == session.login}" href="#" th:onclick="|javascript:test('${talk.talkNum}')|">삭제</a>
+<!--                            th:href="@{/api/talks/delete/{talkNum}(talkNum=${talk.talkNum})}-->
+                            <script>
+    function test(num) {
+        if (!confirm("정말 삭제하시겠습니까?")) {
+        } else {
+        location.href="/api/talks/delete/"+num;
+        }
+    }
+</script>
+
+
+                            <a th:if="${talk.nickname == session.login}" href="#" onclick="alertWarning()">수정</a>
                         </div>
                         <div class="col">
-                            <pre th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;">
-a
-b
-테스트</pre>
+                            <th:block th:if="${talk.talkLock != true}">
+                                <pre th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                            </th:block>
+                            <th:block th:unless="${talk.talkLock != true}">
+                                <pre th:if="${session.login == 'leeniesta'}" th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                                <th:block th:unless="${session.login == 'leeniesta'}">
+                                    <pre th:if="${talk.nickname == session.login}" th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                                    <pre th:if="${talk.nickname != session.login}" th:text="'비밀 글로 작성된 내용입니다.'" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                                </th:block>
+                            </th:block>
                         </div>
                     </div>
                 </div><!--테스트용 글 1개 끝-->
@@ -44,7 +74,7 @@ b
                 <form action="/api/talks" method="post">
                 <div class="row">
                     <div class="col">
-                        <textarea class="form-control font-size-6" name="talkContent" id="talkContent" rows="2"></textarea>
+                        <textarea class="form-control font-size-6" name="talkContent" id="talkContent" rows="2" onkeyup="contentLength()" required></textarea>
                     </div>
                     <div class="col-auto">
                         <!--스위치 적용이 안 되는데 나중에 해결하고 일단은 체크박스로 진행-->
@@ -58,27 +88,30 @@ b
                             <input class="btn btn-secondary btn-sm w-100" type="submit" value="등록">
                         </div>
                     </div>
-                    <p class="text-start text-secondary font-size-6">글자 수 : 0 / 100</p>
+                    <p class="text-start text-secondary font-size-6">글자 수 : (추후 구현)</p>
 
 <!--                    페이지네이션-->
 <!--                    <nav th:replace="fragments/common :: pagination"/>-->
                     <nav th:fragment="pagination" aria-label="...">
                         <ul th:with="start = ${pageMaker.startPage}, end = ${pageMaker.endPage}" class="pagination pagination-sm justify-content-end">
-                            <!--        <li th:if="pageMaker.isPrev() == true" class="page-item">-->
-                            <!--            <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.startPage-1 })}" aria-label="Previous">-->
-                            <!--                <span aria-hidden="true">&laquo;</span>-->
-                            <!--            </a>-->
-                            <!--        </li>-->
+                            <!--이전 페이지-->
+                                    <li th:if="${pageMaker.isPrev() == true}" class="page-item">
+                                        <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.startPage-1 })}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                            <!--페이지 반복문-->
                             <li
                                 th:each="pageNum : ${#numbers.sequence(start, end)}"
-                                class="page-item">
-                                <a class="page-link" href="#">1</a>
+                                class="page-item" th:classappend="${pageNum == pageMaker.cri.page} ? 'active'">
+                                <a th:text="${pageNum}" class="page-link" th:href="@{/talk?page={page} (page = ${pageNum})}">1</a>
                             </li>
-                            <!--        <li th:if="pageMaker.isNext() == true && pageMaker.endPage > 0" class="page-item">-->
-                            <!--            <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.endPage+1 })}" aria-label="Next">-->
-                            <!--                <span aria-hidden="true">&raquo;</span>-->
-                            <!--            </a>-->
-                            <!--        </li>-->
+                            <!--다음 페이지>-->
+                                    <li th:if="${pageMaker.isNext() == true && pageMaker.endPage > 0}" class="page-item">
+                                        <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.endPage+1 })}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
                         </ul>
                     </nav>
 

@@ -11,6 +11,8 @@ public interface TalkService {
 
     List<TalkDTO> getList(Criteria criteria);
 
+    int countTalkList();
+
     TalkDTO get(int talkNum);
 
     void update(TalkDTO talkDTO);

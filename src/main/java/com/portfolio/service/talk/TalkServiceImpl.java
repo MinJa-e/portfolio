@@ -29,6 +29,11 @@ public class TalkServiceImpl implements TalkService {
     }
 
     @Override
+    public int countTalkList() {
+        return talkMapper.countTalkList();
+    }
+
+    @Override
     public TalkDTO get(int talkNum) {
         return talkMapper.get(talkNum);
     }

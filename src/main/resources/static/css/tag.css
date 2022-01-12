@@ -17,6 +17,7 @@ body::-webkit-scrollbar-track {
 
 a {
   text-decoration: none !important;
+      color: hsl(216deg 64% 62%);
 }
 
 textarea {
