@@ -29,9 +29,10 @@ public class ApiTalkController {
         talkService.update(talkDTO);
     }
 
-    @DeleteMapping
-    public void delete(int talkNum) {
+    @GetMapping("/delete/{talkNum}")
+    public String delete(@PathVariable int talkNum) {
         talkService.delete(talkNum);
+        return "redirect:/talk";
     }
 
 }

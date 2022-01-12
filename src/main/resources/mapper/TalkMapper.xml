@@ -16,6 +16,33 @@
         FROM    talk
         ORDER BY talkNum DESC
     </select>
+
+
+    <select id="getList" parameterType="Criteria" resultType="TalkDTO">
+        SELECT
+        <include refid="boardColumns" />
+        FROM
+        tb_board
+        WHERE
+        delete_yn = 'N'
+        ORDER BY
+        notice_yn ASC,
+        idx DESC,
+        insert_time DESC
+        LIMIT
+        #{paginationInfo.firstRecordIndex}, #{recordsPerPage}
+    </select>
+
+    <select id="getTalkTotalCount" parameterType="Criteria" resultType="int">
+        SELECT
+        COUNT(*)
+        FROM
+        tb_board
+        WHERE
+        delete_yn = 'N'
+    </select>
+
+
     <select id="get" parameterType="int" resultType="com.portfolio.domain.talk.TalkDTO">
         SELECT
         talkNum,
@@ -32,7 +59,7 @@
         WHERE   talkNum = #{talkNum}
     </update>
     <delete id="delete" parameterType="int">
-        DELETE talk
+        DELETE from talk
         WHERE   talkNum = #{talkNum}
     </delete>
 </mapper>

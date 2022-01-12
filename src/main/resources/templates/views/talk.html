@@ -26,7 +26,7 @@
                             <span th:text="${talk.talkNum}">1</span> | <span th:text="${talk.nickname}">이민재</span> <br>
                             <span th:text="${#temporals.format(talk.date, 'yyyy-MM-dd HH:mm')}" style="color:gray">(2012.12.27 17:31)</span><br>
                             <a href="#" onclick="alertWarning()">댓글</a>
-                            <a href="#" onclick="alertWarning()">삭제</a>
+                            <a th:href="@{/api/talks/delete/{talkNum}(talkNum=${talk.talkNum})}">삭제</a>
                             <a href="#" onclick="alertWarning()">수정</a>
 <!--                            <a href="#">댓글</a>-->
 <!--                            <a href="#">삭제</a>-->
@@ -59,16 +59,21 @@ b
                         </div>
                     </div>
                     <p class="text-start text-secondary font-size-6">글자 수 : 0 / 100</p>
+
+<!--                    페이지네이션-->
+                    <header th:replace="fragments/header :: header"/>
+                    <nav th:replace="fragments/common :: pagination"/>
+
                     <!--페이지네이션-->
-                    <nav aria-label="...">
-                        <ul class="pagination pagination-sm justify-content-end">
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">1</span>
-                            </li>
-<!--                            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--                            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-                        </ul>
-                    </nav>
+<!--                    <nav aria-label="...">-->
+<!--                        <ul class="pagination pagination-sm justify-content-end">-->
+<!--                            <li class="page-item active" aria-current="page">-->
+<!--                                <span class="page-link">1</span>-->
+<!--                            </li>-->
+<!--&lt;!&ndash;                            <li class="page-item"><a class="page-link" href="#">2</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <li class="page-item"><a class="page-link" href="#">3</a></li>&ndash;&gt;-->
+<!--                        </ul>-->
+<!--                    </nav>-->
                 </div>
                 </form>
             </div>

@@ -8,7 +8,7 @@ public interface TalkService {
 
     void create(TalkDTO talkDTO);
 
-    List<TalkDTO> getList();
+    List<TalkDTO> getList(TalkDTO talkDTO);
 
     TalkDTO get(int talkNum);
 

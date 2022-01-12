@@ -10,11 +10,14 @@ public interface TalkMapper {
 
     void insert(TalkDTO talkDTO);
 
-    List<TalkDTO> getList();
+    List<TalkDTO> getList(TalkDTO talkDTO);
+
+    int getTalkTotalCount(TalkDTO talkDTO);
 
     TalkDTO get(int talkNum);
 
     void update(TalkDTO talkDTO);
 
     void delete(int talkNum);
+
 }
