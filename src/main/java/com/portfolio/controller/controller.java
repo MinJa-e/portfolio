@@ -1,12 +1,13 @@
 package com.portfolio.controller;
 
 import com.portfolio.domain.talk.TalkDTO;
+import com.portfolio.pagination.Criteria;
+import com.portfolio.pagination.PageMaker;
 import com.portfolio.service.talk.TalkService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -27,10 +28,16 @@ public class controller {
     }
 
     @GetMapping("talk")
-    public String talkList(@ModelAttribute("talkDTO") TalkDTO talkDTO, Model model) {
-        List<TalkDTO> talkList = talkService.getList(talkDTO);
+    public String talkList(Criteria criteria, Model model) {
 
-        model.addAttribute("list",talkService.getList(talkDTO));
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCri(criteria);
+        pageMaker.setTotalCount(100);//총게시글수 조횐데 아직 로직 구현x여서 임의로 넣음
+
+        List<TalkDTO> List = talkService.getList(criteria);
+
+        model.addAttribute("list",talkService.getList(criteria));
+        model.addAttribute("pageMaker", pageMaker);
 
         return "views/talk";
     }

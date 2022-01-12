@@ -6,42 +6,23 @@
         INSERT INTO talk (nickname,date,talkContent,talkLock)
         VALUES ( #{nickname},now(),#{talkContent},#{talkLock} )
     </insert>
-    <select id="getList" parameterType="com.portfolio.domain.talk.TalkDTO" resultType="com.portfolio.domain.talk.TalkDTO">
-        SELECT
-        talkNum,
-        nickname,
-        date,
-        talkContent,
-        talkLock
-        FROM    talk
-        ORDER BY talkNum DESC
-    </select>
 
-
-    <select id="getList" parameterType="Criteria" resultType="TalkDTO">
+    <select id="getList" parameterType="com.portfolio.pagination.Criteria" resultType="com.portfolio.domain.talk.TalkDTO">
+    <![CDATA[
         SELECT
-        <include refid="boardColumns" />
+            talkNum,
+            nickname,
+            date,
+            talkContent,
+            talkLock
         FROM
-        tb_board
-        WHERE
-        delete_yn = 'N'
+            talk
         ORDER BY
-        notice_yn ASC,
-        idx DESC,
-        insert_time DESC
+            talkNum DESC
         LIMIT
-        #{paginationInfo.firstRecordIndex}, #{recordsPerPage}
+            #{pageStart}, #{perPageNum}
+    ]]>
     </select>
-
-    <select id="getTalkTotalCount" parameterType="Criteria" resultType="int">
-        SELECT
-        COUNT(*)
-        FROM
-        tb_board
-        WHERE
-        delete_yn = 'N'
-    </select>
-
 
     <select id="get" parameterType="int" resultType="com.portfolio.domain.talk.TalkDTO">
         SELECT

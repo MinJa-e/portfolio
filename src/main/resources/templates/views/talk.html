@@ -61,19 +61,27 @@ b
                     <p class="text-start text-secondary font-size-6">글자 수 : 0 / 100</p>
 
 <!--                    페이지네이션-->
-                    <header th:replace="fragments/header :: header"/>
-                    <nav th:replace="fragments/common :: pagination"/>
+<!--                    <nav th:replace="fragments/common :: pagination"/>-->
+                    <nav th:fragment="pagination" aria-label="...">
+                        <ul th:with="start = ${pageMaker.startPage}, end = ${pageMaker.endPage}" class="pagination pagination-sm justify-content-end">
+                            <!--        <li th:if="pageMaker.isPrev() == true" class="page-item">-->
+                            <!--            <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.startPage-1 })}" aria-label="Previous">-->
+                            <!--                <span aria-hidden="true">&laquo;</span>-->
+                            <!--            </a>-->
+                            <!--        </li>-->
+                            <li
+                                th:each="pageNum : ${#numbers.sequence(start, end)}"
+                                class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <!--        <li th:if="pageMaker.isNext() == true && pageMaker.endPage > 0" class="page-item">-->
+                            <!--            <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.endPage+1 })}" aria-label="Next">-->
+                            <!--                <span aria-hidden="true">&raquo;</span>-->
+                            <!--            </a>-->
+                            <!--        </li>-->
+                        </ul>
+                    </nav>
 
-                    <!--페이지네이션-->
-<!--                    <nav aria-label="...">-->
-<!--                        <ul class="pagination pagination-sm justify-content-end">-->
-<!--                            <li class="page-item active" aria-current="page">-->
-<!--                                <span class="page-link">1</span>-->
-<!--                            </li>-->
-<!--&lt;!&ndash;                            <li class="page-item"><a class="page-link" href="#">2</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <li class="page-item"><a class="page-link" href="#">3</a></li>&ndash;&gt;-->
-<!--                        </ul>-->
-<!--                    </nav>-->
                 </div>
                 </form>
             </div>

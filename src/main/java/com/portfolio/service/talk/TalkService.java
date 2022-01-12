@@ -1,6 +1,7 @@
 package com.portfolio.service.talk;
 
 import com.portfolio.domain.talk.TalkDTO;
+import com.portfolio.pagination.Criteria;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ public interface TalkService {
 
     void create(TalkDTO talkDTO);
 
-    List<TalkDTO> getList(TalkDTO talkDTO);
+    List<TalkDTO> getList(Criteria criteria);
 
     TalkDTO get(int talkNum);
 

@@ -1,29 +1,19 @@
-<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
-    <ul class="pagination">
-        <li th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
-            <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+<nav th:fragment="pagination" aria-label="...">
+    <ul class="pagination pagination-sm justify-content-end">
+<!--        <li th:if="pageMaker.isPrev() == true" class="page-item">-->
+<!--            <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.startPage-1 })}" aria-label="Previous">-->
+<!--                <span aria-hidden="true">&laquo;</span>-->
+<!--            </a>-->
+<!--        </li>-->
+        <li th:with="start=${pageMaker.startPage}, end=${pageMaker.endPage}"
+            th:each="pageNum : ${#numbers.sequence(start, end)}"
+            class="page-item">
+            <a class="page-link" href="#">1</a>
         </li>
-        <li th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
-            <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
-        </li>
-        <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" th:class="${pageNo == params.currentPageNo} ? 'active'">
-            <a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
-        </li>
-        <li th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
-            <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
-        </li>
-        <li th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
-            <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-        </li>
+<!--        <li th:if="pageMaker.isNext() == true && pageMaker.endPage > 0" class="page-item">-->
+<!--            <a class="page-link" th:href="@{/talk?page={page}(page=${pageMaker.endPage+1 })}" aria-label="Next">-->
+<!--                <span aria-hidden="true">&raquo;</span>-->
+<!--            </a>-->
+<!--        </li>-->
     </ul>
-        <script th:inline="javascript">
-			/*<![CDATA[*/
-
-			function movePage(uri, queryString) {
-				location.href = uri + queryString;
-			}
-
-			/*]]>*/
-		</script>
-<!--  참고 : https://congsong.tistory.com/26  -->
 </nav>

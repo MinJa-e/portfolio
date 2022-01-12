@@ -1,12 +1,11 @@
 package com.portfolio.domain.talk;
 
-import com.portfolio.domain.CommonDTO;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
-public class TalkDTO extends CommonDTO {
+public class TalkDTO {
 
     private int talkNum;
     private String nickname;
