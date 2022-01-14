@@ -1,0 +1,43 @@
+<div th:fragment="memberUpdate" class="modal fade" id="modalMemberUpdate" tabindex="-1" aria-labelledby="modalMemberUpdate" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">회원 정보 수정</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="mb-3">
+                        <label for="nickname" class="form-label">닉네임</label>
+                        <input type="text" class="form-control" id="nickname" placeholder="1~6자, 중복 불가">
+                    </div>
+                    <div class="row justify-content-end">
+                        <input class="col-auto me-3 btn btn-primary" type="submit" value="변경">
+                    </div>
+                </form>
+
+<!--                <hr>-->
+<form>
+                    <div class="my-4 mb-3">
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input type="text" class="form-control" id="password" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordCheck" class="form-label">비밀번호 확인</label>
+                        <input type="text" class="form-control" id="passwordCheck" placeholder="">
+                    </div>
+                    <div class="row justify-content-end">
+                        <input class="col-auto me-3 btn btn-primary" type="submit" value="변경">
+                    </div>
+</form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+<!--                <button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>

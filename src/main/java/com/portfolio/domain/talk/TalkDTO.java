@@ -12,6 +12,7 @@ public class TalkDTO {
     private String talkContent;
     private LocalDateTime date;
     private Boolean talkLock;
+    private String id;
 
 
 }

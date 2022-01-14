@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link th:href="@{/css/pages/detailPage/id.css}" rel="stylesheet">
+    <link th:href="@{/css/pages/detailPage/class.css}" rel="stylesheet">
+    <link th:href="@{/css/slickCustom.css}" rel="stylesheet">
+</head>
+
+<main layout:fragment="content">
+
+    <div id="detailPageBackground">
+        <div id="detailPageSection">
+            <h1 class="title">
+                프로젝트 상세페이지
+            </h1>
+            <!--슬릭같은 라이브러리 이용해서 사진 슬라이드 구현-->
+
+        <div class="your-class">
+            <div><img th:src="@{/img/projectImage/triplan.png}">메인 페이지</div>
+            <div><img th:src="@{/img/projectImage/triplan.png}">메인 페이지</div>
+            <div><img th:src="@{/img/projectImage/triplan.png}">메인 페이지</div>
+            <div><img th:src="@{/img/projectImage/triplan.png}">메인 페이지</div>
+        </div>
+
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                주제
+            </div>
+            <div class="col">
+                포트폴리오형 블로그
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                상세 설명
+            </div>
+            <div class="col">
+                팀 프로젝트 때 백엔드 경험에 부족함을 느껴, 추가적인 공부 및 포트폴리오 제작의 필요성을 느껴 제작<br>
+                단순한 포트폴리오 제작만 구현하기에는 아쉬워, 개인 창작물 전시 및 방명록 기능 추가
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                주요 기능
+            </div>
+            <div class="col">
+                <ol style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>스프링 부트와 RESTful API를 이용해 로그인, 회원가입, 방명록, 페이지네이션 등 기본적인 웹 구조 구현
+                    <li>방명록 내 비밀글/답글 기능 구현
+                    <li>자바 스크립트와 부트스트랩을 이용하여 스크롤 리모컨, 모달, 콜랩스, 드롭다운,  아코디언, 경고 메세지, 토글, 그림자 등 동적 요소 구현
+                    <li>부트스트랩과 미디어 쿼리를 이용한 반응형 웹 페이지 구현
+                    <li>스프링 부트와 자바 스크립트를 이용한 유효성 검사
+                    <li>스프링 시큐리티를 이용한 데이터 암호화 구현
+                </ol>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                담당 업무
+            </div>
+            <div class="col">
+                <ol style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>스프링 부트와 RESTful API를 이용해 로그인, 회원가입, 방명록, 페이지네이션 등 기본적인 웹 구조 구현
+                    <li>방명록 내 비밀글/답글 기능 구현
+                </ol>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                사용 기술
+            </div>
+            <div class="col">
+                <ul style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>Front-end :
+                    <li>Back-end :
+                    <li>Others :
+                </ul>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                개발 기간
+            </div>
+            <div class="col">
+                2022년 10월 10일 ~ 2022년 10월 11일 ( 총 10일 소요 )
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                개발 인원
+            </div>
+            <div class="col">
+                20인
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                깃허브
+            </div>
+            <div class="col">
+                github.com/abc
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                링크
+            </div>
+            <div class="col">
+                leeniesta.cafe24.com
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                느낀점
+            </div>
+            <div class="col">
+                <ol style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>남의 코드를 그대로 흉내내기 보다는, 최대한 로직을 스스로 구현하는 데에 집중했음.<br>
+                        스프링 부트의 계층 구조 내에서 데이터가 이동되는 원리에 대해 더 깊이 이해할 수 있었음.
+                    <li>혼자 많은 파일들을 관리하다 보니 정리의 필요성을 느끼게 되었고, 파일 분류를 체계적으로 하는 데에 집중하게 됐음
+                </ol>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</main>
+
+</html>
+<div th:replace="fragments/after :: upBtn"/>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+      $('.your-class').slick({
+speed: 300,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  cssEase: 'linear',
+  prevArrow : "<button type='button' class='slick-prev slick-arrow-black'><</button>",		// 이전 화살표 모양 설정
+  nextArrow : "<button type='button' class='slick-next slick-arrow-black'>></button>",		// 다음 화살표 모양 설정
+});
+    </script>
+
+<script type="text/javascript">
+$('.your-class').slick();
+    </script>

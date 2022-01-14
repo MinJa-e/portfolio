@@ -1,9 +1,9 @@
 <div th:fragment="login">
-    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal fade" id="modalLogin" aria-hidden="true" aria-labelledby="modalLogin" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title font-size-4" id="exampleModalToggleLabel" style="font-weight: bold;">로그인</h5>
+                    <h4 class="modal-title" id="exampleModalToggleLabel" style="font-weight: bold;">로그인</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="/api/members/login" method="post">
@@ -18,7 +18,7 @@
                         <input type="password" class="form-control" name="password" id="login_password" required>
                     </div>
                     <div class="p-0 mt-3 mb-0 form-check d-flex justify-content-between">
-                        <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal"
+                        <a data-bs-target="#modalJoin" data-bs-toggle="modal" data-bs-dismiss="modal"
                            style="
                         cursor: pointer;
     text-decoration: underline;"
@@ -43,7 +43,7 @@
 
 
 
-    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade" id="modalJoin" aria-hidden="true" aria-labelledby="modalJoin" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -56,24 +56,24 @@
 
                     <div class="mb-3">
                         <label for="join_id" class="form-label">아이디</label>
-                        <input type="text" class="form-control font-size-6" name="id" id="join_id" aria-describedby="idHelp" placeholder="영어, 숫자 조합 6자 이상" required>
+                        <input type="text" class="form-control font-size-6" name="id" id="join_id" aria-describedby="idHelp" placeholder="중복 불가" required>
 <!--                                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
                     </div>
                     <div class="mb-3">
                         <label for="join_password" class="form-label">비밀번호</label>
-                        <input type="password" class="form-control font-size-6" name="password" id="join_password" placeholder="4자 이상" required>
+                        <input type="password" class="form-control font-size-6" name="password" id="join_password" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
                     </div>
                     <div class="mb-3">
                         <label for="join_passwordCheck" class="form-label">비밀번호 확인</label>
-                        <input type="password" class="form-control font-size-6" name="passwordCheck" id="join_passwordCheck" placeholder="4자 이상" required>
+                        <input type="password" class="form-control font-size-6" name="passwordCheck" id="join_passwordCheck" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
                     </div>
                     <div class="mb-3">
                         <label for="join_nickname" class="form-label">닉네임</label>
-                        <input type="text" class="form-control font-size-6" name="nickname" id="join_nickname" placeholder="1~6자, 중복x" required>
+                        <input type="text" class="form-control font-size-6" name="nickname" id="join_nickname" placeholder="1~6자, 중복 불가" required>
                     </div>
 
                     <div class="p-0 mb-0 form-check d-flex justify-content-between">
-                        <a data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal"
+                        <a data-bs-target="#modalLogin" data-bs-toggle="modal" data-bs-dismiss="modal"
                            style="
                         cursor: pointer;
     text-decoration: underline;"

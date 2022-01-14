@@ -3,8 +3,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.portfolio.mapper.talk.TalkMapper">
     <insert id="insert" useGeneratedKeys="true" keyProperty="talkNum">
-        INSERT INTO talk (nickname,date,talkContent,talkLock)
-        VALUES ( #{nickname},now(),#{talkContent},#{talkLock} )
+        INSERT INTO talk (nickname,date,talkContent,talkLock,id)
+        VALUES ( #{nickname},now(),#{talkContent},#{talkLock},#{id} )
     </insert>
 
     <select id="getList" parameterType="com.portfolio.pagination.Criteria" resultType="com.portfolio.domain.talk.TalkDTO">
@@ -14,7 +14,8 @@
             nickname,
             date,
             talkContent,
-            talkLock
+            talkLock,
+            id
         FROM
             talk
         ORDER BY

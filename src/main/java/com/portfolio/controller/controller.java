@@ -46,4 +46,14 @@ public class controller {
     public String warning(){
         return "views/warning";
     }
+
+    @GetMapping("detailPage/triplan")
+    public String detailPagetriplan(){
+        return "views/detailPage/triplan";
+    }
+
+    @GetMapping("detailPage/portfolio")
+    public String detailPagePortfolio(){
+        return "views/detailPage/portfolio";
+    }
 }
