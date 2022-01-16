@@ -18,16 +18,24 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public Boolean login(String id, String password) {
-        System.out.println(memberMapper.login(id));
-        System.out.println(password);
-            if( memberMapper.login(id).equals(password) ){
-                System.out.println("로그인 성공");
-                return true;
-            }else{
-            System.out.println("로그인 실패");
-            return false;
-        }
+    public MemberDTO login(MemberDTO memberDTO) {
+            return memberMapper.login(memberDTO);
+
+    }
+
+    @Override
+    public MemberDTO getMember(MemberDTO memberDTO) {
+        return memberMapper.getMember(memberDTO);
+    }
+
+    @Override
+    public void updateNickname(MemberDTO memberDTO) {
+        memberMapper.updateNickname(memberDTO);
+    }
+
+    @Override
+    public void updatePwd(MemberDTO memberDTO) {
+        memberMapper.updatePwd(memberDTO);
     }
 
 

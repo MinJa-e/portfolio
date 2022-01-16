@@ -28,9 +28,9 @@
                                 <span th:text="${talk.nickname}"/>
                             </th:block>
                             <th:block th:unless="${talk.talkLock != true}">
-                                <span class="text-secondary" th:if="${session.login == 'leeniesta'}" th:text="${talk.nickname}"/>
-                                <th:block th:unless="${session.login == 'leeniesta'}">
-                                    <span class="text-secondary" th:if="${talk.nickname == session.login}" th:text="${talk.nickname}"/>
+                                <span class="text-secondary" th:if="${session.login.id == 'leeniesta'}" th:text="${talk.nickname}"/>
+                                <th:block th:unless="${session.login.id == 'leeniesta'}">
+                                    <span class="text-secondary" th:if="${talk.id == session.login.id}" th:text="${talk.nickname}"/>
                                 </th:block>
                                 <i class='bi bi-lock-fill text-secondary'></i>
                             </th:block>
@@ -40,9 +40,9 @@
                                 <a href="#" onclick="alertWarning()">댓글</a>
                             </th:block>
                             <th:block th:unless="${talk.talkLock != true}">
-                                <a th:if="${talk.nickname == session.login || session.login == 'leeniesta'}"href="#" onclick="alertWarning()">댓글</a>
+                                <a th:if="${talk.id == session.login.id || session.login.id == 'leeniesta'}"href="#" onclick="alertWarning()">댓글</a>
                             </th:block>
-                            <a th:if="${talk.nickname == session.login}" href="#" th:onclick="|javascript:test('${talk.talkNum}')|">삭제</a>
+                            <a th:if="${talk.id == session.login.id}" href="#" th:onclick="|javascript:test('${talk.talkNum}')|">삭제</a>
 <!--                            th:href="@{/api/talks/delete/{talkNum}(talkNum=${talk.talkNum})}-->
                             <script>
     function test(num) {
@@ -54,17 +54,17 @@
 </script>
 
 
-                            <a th:if="${talk.nickname == session.login}" href="#" onclick="alertWarning()">수정</a>
+                            <a th:if="${talk.id == session.login.id}" href="#" onclick="alertWarning()">수정</a>
                         </div>
                         <div class="col">
                             <th:block th:if="${talk.talkLock != true}">
                                 <pre th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
                             </th:block>
                             <th:block th:unless="${talk.talkLock != true}">
-                                <pre th:if="${session.login == 'leeniesta'}" th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
-                                <th:block th:unless="${session.login == 'leeniesta'}">
-                                    <pre th:if="${talk.nickname == session.login}" th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
-                                    <pre th:if="${talk.nickname != session.login}" th:text="'비밀 글로 작성된 내용입니다.'" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                                <pre th:if="${session.login.id == 'leeniesta'}" th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                                <th:block th:unless="${session.login.id == 'leeniesta'}">
+                                    <pre th:if="${talk.id == session.login.id}" th:text="${talk.talkContent}" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
+                                    <pre th:if="${talk.id != session.login.id}" th:text="'비밀 글로 작성된 내용입니다.'" class="mb-0" style="max-height:7.4vh;white-space: pre-wrap;"/>
                                 </th:block>
                             </th:block>
                         </div>
@@ -81,8 +81,8 @@
 
                         <div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="hidden" name="id" id="id" th:value="${session.login}">
-                                <input class="form-check-input" type="hidden" name="nickname" id="nickname" th:value="${session.login}">
+                                <input class="form-check-input" type="hidden" name="id" id="id" th:value="${session.login.id}">
+                                <input class="form-check-input" type="hidden" name="nickname" id="nickname" th:value="${session.login.nickname}">
                                 <input class="form-check-input" type="checkbox" name="talkLock" id="talkLock">
                                 <label class="form-check-label font-size-6" for="talkLock">비밀글</label>
                             </div>

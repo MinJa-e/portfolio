@@ -1,6 +1,8 @@
 <header th:fragment="header">
+    <th:block th:if="${session.login != null}">
+        <div th:replace="fragments/modal/memberUpdate :: memberUpdate"/>
+    </th:block>
     <div th:replace="fragments/modal/login :: login"/>
-    <div th:replace="fragments/modal/memberUpdate :: memberUpdate"/>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height:6vh;min-height:32px;"><!---->
         <div class="container-fluid justify-content-between">
             <!--로고-->
@@ -70,8 +72,8 @@
 <!--                로그인시-->
 
                 <div th:if="${session.login != null}" class="btn-group">
-                    <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        이민재님
+                    <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" th:text="${session.login.nickname}+' '+님">
+                        회원 메뉴
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><button class="dropdown-item" type="button" data-bs-toggle="modal" href="#modalMemberUpdate">정보수정</button></li>

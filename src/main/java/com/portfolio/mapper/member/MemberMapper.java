@@ -7,5 +7,12 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberMapper {
 
     void join(MemberDTO memberDTO);
-    String login(String id);
+
+    MemberDTO login(MemberDTO memberDTO);
+
+    MemberDTO getMember(MemberDTO memberDTO);
+
+    void updateNickname(MemberDTO memberDTO);
+
+    void updatePwd(MemberDTO memberDTO);
 }

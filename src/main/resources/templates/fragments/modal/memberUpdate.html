@@ -7,10 +7,11 @@
             </div>
             <div class="modal-body">
 
-                <form>
+                <form action="/api/members/update/nickname" method="get">
                     <div class="mb-3">
-                        <label for="nickname" class="form-label">닉네임</label>
-                        <input type="text" class="form-control" id="nickname" placeholder="1~6자, 중복 불가">
+                        <label for="memberUpdate_nickname" class="form-label">닉네임</label>
+                        <input type="text" class="form-control" name="nickname" id="memberUpdate_nickname" placeholder="1~6자, 중복 불가">
+                        <input th:value="${session.login.id}" type="hidden" class="form-control" name="id" id="memberUpdateNickname_id" >
                     </div>
                     <div class="row justify-content-end">
                         <input class="col-auto me-3 btn btn-primary" type="submit" value="변경">
@@ -18,19 +19,29 @@
                 </form>
 
 <!--                <hr>-->
-<form>
+    <form action="/api/members/update/pwd" method="get">
                     <div class="my-4 mb-3">
-                        <label for="password" class="form-label">비밀번호</label>
-                        <input type="text" class="form-control" id="password" placeholder="">
+                        <label for="memberUpdate_pwd" class="form-label">비밀번호</label>
+                        <input type="text" class="form-control" name="pwd" id="memberUpdate_pwd" placeholder="">
+                        <input th:value="${session.login.id}" type="hidden" class="form-control" name="id" id="memberUpdatePwd_id" >
                     </div>
                     <div class="mb-3">
-                        <label for="passwordCheck" class="form-label">비밀번호 확인</label>
-                        <input type="text" class="form-control" id="passwordCheck" placeholder="">
+                        <label for="memberUpdate_pwdCheck" class="form-label">비밀번호 확인</label>
+                        <input type="text" class="form-control" name="pwdCheck" id="memberUpdate_pwdCheck" placeholder="">
                     </div>
                     <div class="row justify-content-end">
-                        <input class="col-auto me-3 btn btn-primary" type="submit" value="변경">
+                        <input class="col-auto me-3 btn btn-primary" onsubmit="return submitPwdCheck()" type="submit" value="변경">
+                        <script>
+                            function submitPwdCheck(){
+
+                                  if( document.getElementById('memberUpdate_pwd').value != document.getElementById('memberUpdate_pwdCheck').value ) {
+                                    alert("비밀번호가 일치 하지 않습니다");
+                                    return false;
+                                  }
+                            }
+                        </script>
                     </div>
-</form>
+    </form>
 
             </div>
 

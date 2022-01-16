@@ -14,8 +14,9 @@
 <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
                     </div>
                     <div class="mb-1">
-                        <label for="login_password" class="form-label">비밀번호</label>
-                        <input type="password" class="form-control" name="password" id="login_password" required>
+                        <label for="login_pwd" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" name="pwd" id="login_pwd" required>
+                        <div class="font-size-6 text-secondary" th:if="${session.warning != null}" th:text="${session.warning}"></div>
                     </div>
                     <div class="p-0 mt-3 mb-0 form-check d-flex justify-content-between">
                         <a data-bs-target="#modalJoin" data-bs-toggle="modal" data-bs-dismiss="modal"
@@ -31,7 +32,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
-                    <input type="submit" class="btn btn-primary" value="로그인"/>
+                    <input type="submit" class="btn btn-primary" onsubmit="return submitLoginCheck()" value="로그인"/>
                 </div>
                 </form>
             </div>
@@ -60,12 +61,12 @@
 <!--                                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
                     </div>
                     <div class="mb-3">
-                        <label for="join_password" class="form-label">비밀번호</label>
-                        <input type="password" class="form-control font-size-6" name="password" id="join_password" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
+                        <label for="join_pwd" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control font-size-6" name="pwd" id="join_pwd" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
                     </div>
                     <div class="mb-3">
-                        <label for="join_passwordCheck" class="form-label">비밀번호 확인</label>
-                        <input type="password" class="form-control font-size-6" name="passwordCheck" id="join_passwordCheck" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
+                        <label for="join_pwdCheck" class="form-label">비밀번호 확인</label>
+                        <input type="password" class="form-control font-size-6" name="pwdCheck" id="join_pwdCheck" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
                     </div>
                     <div class="mb-3">
                         <label for="join_nickname" class="form-label">닉네임</label>
@@ -86,8 +87,19 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
-                    <input type="submit" class="btn btn-primary" value="가입"/>
+                    <input type="submit" class="btn btn-primary" onsubmit="return submitJoinCheck()" value="가입"/>
+                    <script>
+                            function submitJoinCheck(){
+
+                                  if( document.getElementById('join_pwd').value != document.getElementById('join_pwdCheck').value ) {
+                                    alert("비밀번호가 일치 하지 않습니다");
+                                    return false;
+                                  }
+                            }
+                    </script>
                 </div>
+
+
                 </form>
             </div>
         </div>

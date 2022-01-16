@@ -4,6 +4,7 @@ import com.portfolio.domain.member.MemberDTO;
 import com.portfolio.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,12 +26,14 @@ public class ApiMemberController {
     }
 
     @PostMapping("/login")
-    public String login(String id, String password, HttpServletRequest request) {
+    public String login(MemberDTO memberDTO, Model model, HttpServletRequest request) {
         HttpSession session = request.getSession();
-        if(memberService.login(id, password)){//true일떄
-            session.setAttribute("login", id);
-            System.out.println("컨트롤러-로그인 성공");
+        memberService.login(memberDTO);
+        if(memberService.login(memberDTO) != null){//true일떄
+            System.out.println(memberService.login(memberDTO));
+            session.setAttribute("login", memberService.login(memberDTO));
         }else{
+            model.addAttribute("warning", "아이디 혹은 비밀번호가 일치하지 않습니다.");
             System.out.println("컨트롤러-로그인 실패");
         };
         return "redirect:/";
@@ -40,6 +43,22 @@ public class ApiMemberController {
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.invalidate();
+        return "redirect:/";
+    }
+
+    @GetMapping("/update/nickname")
+    public String updateNickname(MemberDTO memberDTO,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        memberService.updateNickname(memberDTO);
+        session.setAttribute("login",memberService.getMember(memberDTO));
+        return "redirect:/";
+    }
+
+    @GetMapping("/update/pwd")
+    public String updatePwd(MemberDTO memberDTO,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        memberService.updatePwd(memberDTO);
+        session.setAttribute("login",memberService.getMember(memberDTO));
         return "redirect:/";
     }
 
