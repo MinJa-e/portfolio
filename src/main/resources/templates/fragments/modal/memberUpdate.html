@@ -7,37 +7,131 @@
             </div>
             <div class="modal-body">
 
-                <form action="/api/members/update/nickname" method="get">
+                <form onsubmit="return false;" onkeyup="if(window.event.keyCode == 13){updateNickname();}">
                     <div class="mb-3">
                         <label for="memberUpdate_nickname" class="form-label">닉네임</label>
-                        <input type="text" class="form-control" name="nickname" id="memberUpdate_nickname" placeholder="1~6자, 중복 불가">
-                        <input th:value="${session.login.id}" type="hidden" class="form-control" name="id" id="memberUpdateNickname_id" >
+                        <input type="text" class="form-control mb-2" name="nickname" id="memberUpdate_nickname" placeholder="1~6자, 중복 불가">
+                        <input th:value="${session.login.id}" type="hidden" class="form-control" name="id" id="memberUpdate_id" >
+                        <div class="row justify-content-between" style="--bs-gutter-x:0;">
+                            <div id="Update_NicknameWarning" class="col-auto font-size-6" style="color:red;"></div>
+                            <button class="col-auto btn btn-primary" onclick="updateNickname()" type="button">변경</button>
+                        </div>
                     </div>
-                    <div class="row justify-content-end">
-                        <input class="col-auto me-3 btn btn-primary" type="submit" value="변경">
-                    </div>
+                        <script>
+        var nicknameCheckResult = new Boolean(false);
+                                    function updateNickname() {
+                                        const url = "http://localhost:8080/api/members/nicknameCheck?nickname=" + document.getElementById('memberUpdate_nickname').value;
+                                        const option = {
+                                            method: 'GET'
+                                        };
+
+                                        fetch(url, option)
+                                            .then((response) => {
+                                                return response.json();
+                                            })
+                                            .then((nicknameCheck) => {
+                                                nicknameCheckResult = nicknameCheck;
+                                                if (document.getElementById('memberUpdate_nickname').value.length < 1) {
+                                                    document.getElementById('Update_NicknameWarning').innerText="닉네임을 입력해주세요.";
+                                                }else {
+                                                    if (nicknameCheckResult != true) {
+                                                        document.getElementById('Update_NicknameWarning').innerText="중복된 닉네임입니다.";
+                                                    }else{
+                                                        updateNicknameOk();
+                                                    }
+                                                }})
+                                            .catch((error) => {
+                                                console.log(error);
+                                            });
+                                    }
+                                </script>
+                    <script>
+                                    function updateNicknameOk() {
+                                        const url = "http://localhost:8080/api/members/nickname";
+                                        const option = {
+                                            method: 'PATCH',
+                                              body: JSON.stringify({
+                                                id: document.getElementById('memberUpdate_id').value,
+                                                nickname: document.getElementById('memberUpdate_nickname').value
+                                              }),
+                                              headers: {
+                                                "Content-Type": "application/json",
+                                              }
+                                        };
+
+                                        fetch(url, option)
+                                            .then((response) => {
+                                                return response.json();
+                                            })
+                                            .then((ok) => {
+                                                location.reload();
+                                            })
+                                            .catch((error) => {
+                                                console.log(error);
+                                            });
+                                    }
+                    </script>
                 </form>
 
 <!--                <hr>-->
-    <form action="/api/members/update/pwd" method="get">
+    <form onsubmit="return false;" onkeyup="if(window.event.keyCode == 13){updatePwd();}">
+        <div>
                     <div class="my-4 mb-3">
                         <label for="memberUpdate_pwd" class="form-label">비밀번호</label>
-                        <input type="text" class="form-control" name="pwd" id="memberUpdate_pwd" placeholder="">
+                        <input type="password" class="form-control" name="pwd" id="memberUpdate_pwd" placeholder="">
                         <input th:value="${session.login.id}" type="hidden" class="form-control" name="id" id="memberUpdatePwd_id" >
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label for="memberUpdate_pwdCheck" class="form-label">비밀번호 확인</label>
-                        <input type="text" class="form-control" name="pwdCheck" id="memberUpdate_pwdCheck" placeholder="">
+                        <input type="password" class="form-control" name="pwdCheck" id="memberUpdate_pwdCheck" placeholder="">
                     </div>
-                    <div class="row justify-content-end">
-                        <input class="col-auto me-3 btn btn-primary" onsubmit="return submitPwdCheck()" type="submit" value="변경">
+                    <div class="row justify-content-end" style="--bs-gutter-x:0;">
+                        <div class="row justify-content-between" style="--bs-gutter-x:0;">
+                            <div id="Update_PwdWarning" class="col-auto font-size-6" style="color:red;"></div>
+                            <button class="col-auto btn btn-primary" onclick="updatePwd()" type="button">변경</button>
+                        </div>
+                    </div>
                         <script>
-                            function submitPwdCheck(){
+                            function updatePwd(){
 
                                   if( document.getElementById('memberUpdate_pwd').value != document.getElementById('memberUpdate_pwdCheck').value ) {
-                                    alert("비밀번호가 일치 하지 않습니다");
+                                    document.getElementById('Update_PwdWarning').innerText="비밀번호가 일치 하지 않습니다";
                                     return false;
                                   }
+                                if( document.getElementById('memberUpdate_pwd').value. length < 1 || document.getElementById('memberUpdate_pwdCheck').value. length < 1 ){
+                                        document.getElementById('Update_PwdWarning').innerText="비밀번호를 입력해주세요.";
+                                        return false;
+                                    }
+                                    if(document.getElementById('memberUpdate_pwd').value == document.getElementById('memberUpdate_pwdCheck').value &&
+                                    document.getElementById('memberUpdate_pwd').value. length > 1 && document.getElementById('memberUpdate_pwdCheck').value. length > 1){
+                                        
+                                        const url = "http://localhost:8080/api/members/pwd";
+                                        const option = {
+                                            method: 'PATCH',
+                                              body: JSON.stringify({
+                                                id: document.getElementById('memberUpdatePwd_id').value,
+                                                pwd: document.getElementById('memberUpdate_pwd').value
+                                              }),
+                                              headers: {
+                                                "Content-Type": "application/json",
+                                              }
+                                        };
+
+                                        fetch(url, option)
+                                            .then((response) => {
+                                                return response.json();
+                                            })
+                                            .then((ok) => {
+                                                location.reload();
+                                            })
+                                            .catch((error) => {
+                                                console.log(error);
+                                            });
+                                    }
+
+                                    
+                                  
+
                             }
                         </script>
                     </div>

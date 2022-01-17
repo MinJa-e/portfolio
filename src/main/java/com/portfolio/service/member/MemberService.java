@@ -10,6 +10,10 @@ public interface MemberService {//여기 매개변수가 있어야 거기 담겨
 
     MemberDTO getMember(MemberDTO memberDTO);
 
+    Boolean idCheck(String id);
+
+    Boolean nicknameCheck(String nickname);
+
     void updateNickname(MemberDTO memberDTO);
 
     void updatePwd(MemberDTO memberDTO);

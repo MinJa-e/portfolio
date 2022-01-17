@@ -12,6 +12,10 @@ public interface MemberMapper {
 
     MemberDTO getMember(MemberDTO memberDTO);
 
+    Boolean idCheck(String id);
+
+    Boolean nicknameCheck(String nickname);
+
     void updateNickname(MemberDTO memberDTO);
 
     void updatePwd(MemberDTO memberDTO);

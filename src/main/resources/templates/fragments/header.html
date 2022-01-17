@@ -2,7 +2,9 @@
     <th:block th:if="${session.login != null}">
         <div th:replace="fragments/modal/memberUpdate :: memberUpdate"/>
     </th:block>
-    <div th:replace="fragments/modal/login :: login"/>
+    <th:block th:if="${session.login == null}">
+        <div th:replace="fragments/modal/login :: login"/>
+    </th:block>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height:6vh;min-height:32px;"><!---->
         <div class="container-fluid justify-content-between">
             <!--로고-->
@@ -23,10 +25,10 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="portfolio">Portfolio</a>
+                            <a class="nav-link" href="/portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="portfolio#projects">Projects</a>
+                            <a class="nav-link" href="/portfolio#projects">Projects</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="warning" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,7 +45,7 @@
                                 Guest
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a th:if="${session.login != null}" class="dropdown-item" href="talk">Talk</a></li>
+                                <li><a th:if="${session.login != null}" class="dropdown-item" href="/talk">Talk</a></li>
                                 <li><a th:if="${session.login == null}"class="dropdown-item" data-bs-toggle="modal" href="#modalLogin">Talk</a></li>
                             </ul>
                         </li>

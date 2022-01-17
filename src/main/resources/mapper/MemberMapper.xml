@@ -12,10 +12,20 @@
         WHERE   id = #{id}
         AND     pwd = #{pwd}
     </select>
-    <select id="getMember" resultType="com.portfolio.domain.member.MemberDTO">
+    <select id="getMember" parameterType="String" resultType="com.portfolio.domain.member.MemberDTO">
         SELECT  *
         FROM    member
         WHERE   id = #{id}
+    </select>
+    <select id="idCheck" resultType="boolean">
+        SELECT  *
+        FROM    member
+        WHERE   id = #{id}
+    </select>
+    <select id="nicknameCheck" resultType="boolean">
+        SELECT  *
+        FROM    member
+        WHERE   nickname = #{nickname}
     </select>
     <update id="updateNickname">
         UPDATE  member

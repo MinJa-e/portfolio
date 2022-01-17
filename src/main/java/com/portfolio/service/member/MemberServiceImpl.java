@@ -29,6 +29,16 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
+    public Boolean idCheck(String id) {
+        return memberMapper.idCheck(id);
+    }
+
+    @Override
+    public Boolean nicknameCheck(String nickname) {
+        return memberMapper.nicknameCheck(nickname);
+    }
+
+    @Override
     public void updateNickname(MemberDTO memberDTO) {
         memberMapper.updateNickname(memberDTO);
     }

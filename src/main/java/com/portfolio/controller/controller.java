@@ -22,7 +22,7 @@ public class controller {
         return "index";
     }
 
-    @GetMapping("portfolio")
+    @GetMapping("/portfolio")
     public String portfolio(){
         return "views/portfolio";
     }

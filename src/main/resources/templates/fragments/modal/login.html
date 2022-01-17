@@ -6,34 +6,66 @@
                     <h4 class="modal-title" id="exampleModalToggleLabel" style="font-weight: bold;">로그인</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/api/members/login" method="post">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="login_id" class="form-label">아이디</label>
-                        <input type="text" class="form-control" name="id" id="login_id" aria-describedby="emailHelp" required>
-<!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
-                    </div>
-                    <div class="mb-1">
-                        <label for="login_pwd" class="form-label">비밀번호</label>
-                        <input type="password" class="form-control" name="pwd" id="login_pwd" required>
-                        <div class="font-size-6 text-secondary" th:if="${session.warning != null}" th:text="${session.warning}"></div>
-                    </div>
-                    <div class="p-0 mt-3 mb-0 form-check d-flex justify-content-between">
-                        <a data-bs-target="#modalJoin" data-bs-toggle="modal" data-bs-dismiss="modal"
-                           style="
+                <form onkeyup="if(window.event.keyCode == 13){submitLoginCheck();}">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="login_id" class="form-label">아이디</label>
+                            <input type="text" class="form-control" name="id" id="login_id" aria-describedby="emailHelp"
+                                required>
+                        </div>
+                        <div class="mb-1">
+                            <label for="login_pwd" class="form-label">비밀번호</label>
+                            <input type="password" class="form-control" name="pwd" id="login_pwd" required>
+                            <div id="loginWarning" class="font-size-6"></div>
+                        </div>
+                        <div class="p-0 mt-3 mb-0 form-check d-flex justify-content-between">
+                            <a data-bs-target="#modalJoin" data-bs-toggle="modal" data-bs-dismiss="modal" style="
                         cursor: pointer;
-    text-decoration: underline;"
-                        >간단 가입</a>
-<!--                        <div>-->
-<!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-<!--                            <label class="form-check-label" for="exampleCheck1">아이디 기억하기</label>-->
-<!--                        </div>-->
+    text-decoration: underline;">간단 가입</a>
+                            <!--                        <div>-->
+                            <!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+                            <!--                            <label class="form-check-label" for="exampleCheck1">아이디 기억하기</label>-->
+                            <!--                        </div>-->
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
-                    <input type="submit" class="btn btn-primary" onsubmit="return submitLoginCheck()" value="로그인"/>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            aria-label="Close">취소</button>
+                        <input type="button" class="btn btn-primary" onclick="submitLoginCheck()" value="로그인" />
+                        <script>
+                            function submitLoginCheck() {
+
+                                const url = "http://localhost:8080/api/members/login";
+                                        const option = {
+                                              method: 'POST',
+                                              body: JSON.stringify({
+                                                id: document.getElementById('login_id').value,
+                                                pwd: document.getElementById('login_pwd').value
+                                              }),
+                                              headers: {
+                                                "Content-Type": "application/json",
+                                              },
+                                        };
+
+                                        fetch(url, option)
+                                            .then((response) => {
+                                                return response.json();
+                                            })
+                                            .then((login) => {
+                                                if(login == true){location.reload();}
+                                                else{
+                                                    document.getElementById('loginWarning').innerText="아이디 혹은 비밀번호가 옳지 않습니다.";
+                                                    document.getElementById('loginWarning').style.color="red";
+                                                }
+                                            })
+                                            .catch((error) => {
+                                                console.log(error);
+                                            });
+
+                            }
+
+                        </script>
+                    </div>
                 </form>
             </div>
         </div>
@@ -48,70 +80,164 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title font-size-4" id="exampleModalToggleLabel2" style="font-weight: bold;">회원가입</h5>
+                    <h5 class="modal-title font-size-4" id="exampleModalToggleLabel2" style="font-weight: bold;">회원가입
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="/api/members/join" method="post">
-                <div class="modal-body">
+                    <div class="modal-body">
 
 
-                    <div class="mb-3">
-                        <label for="join_id" class="form-label">아이디</label>
-                        <input type="text" class="form-control font-size-6" name="id" id="join_id" aria-describedby="idHelp" placeholder="한글 사용 가능, 특수문자 불가, 중복 불가, 길이 제한x" required>
-<!--                                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
-                    </div>
-                    <div class="mb-3">
-                        <label for="join_pwd" class="form-label">비밀번호</label>
-                        <input type="password" class="form-control font-size-6" name="pwd" id="join_pwd" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="join_pwdCheck" class="form-label">비밀번호 확인</label>
-                        <input type="password" class="form-control font-size-6" name="pwdCheck" id="join_pwdCheck" placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="join_nickname" class="form-label">닉네임</label>
-                        <input type="text" class="form-control font-size-6" name="nickname" id="join_nickname" placeholder="1~6자, 중복 불가" maxlength="6" required>
-                    </div>
+                        <div class="mb-3">
+                            <label for="join_id" class="form-label">아이디</label>
+                            <div class="row" style="--bs-gutter-x:0;">
+                                <input type="text" class="form-control font-size-6 col" name="id" id="join_id"
+                                    aria-describedby="idHelp" placeholder="한글 사용 가능, 특수문자 불가, 중복 불가, 길이 제한x" required>
+                                <button type="button" class="btn btn-secondary col-auto ms-2" onclick="JoinIdCheck()">중복
+                                    확인</button>
+                                <script>
+                                    function JoinIdCheck() {
 
-                    <div class="p-0 mb-0 form-check d-flex justify-content-between">
-                        <a data-bs-target="#modalLogin" data-bs-toggle="modal" data-bs-dismiss="modal"
-                           style="
+                                        const url = "http://localhost:8080/api/members/idCheck?id=" + document.getElementById('join_id').value;
+                                        const option = {
+                                            method: 'GET'
+                                        };
+
+                                        fetch(url, option)
+                                            .then((response) => {
+                                                return response.json();
+                                            })
+                                            .then((idCheck) => {
+                                                idCheckResult = idCheck;
+                                                if (document.getElementById('join_id').value.length < 1) {
+                                                    document.getElementById('join_idWarning').innerText="아이디를 입력해주세요.";
+                                                    document.getElementById('join_idWarning').style.color="red";
+                                                }else {
+                                                    if (idCheckResult != true) {
+                                                        document.getElementById('join_idWarning').innerText="중복된 아이디입니다.";
+                                                        document.getElementById('join_idWarning').style.color="red";
+                                                    }else{
+                                                        document.getElementById('join_idWarning').innerText="사용 가능한 아이디입니다.";
+                                                        document.getElementById('join_idWarning').style.color="green";
+                                                        idCheckResult = true;
+                                                    }
+                                                }})
+                                            .catch((error) => {
+                                                console.log(error);
+                                            });
+
+                                    }
+                                </script>
+                            </div>
+                            <div id="join_idWarning" class="font-size-6" style="color:red;"></div>
+                            <!--                                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                        </div>
+                        <div class="mb-3">
+                            <label for="join_pwd" class="form-label">비밀번호</label>
+                            <input type="password" class="form-control font-size-6" name="pwd" id="join_pwd"
+                                placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="join_pwdCheck" class="form-label">비밀번호 확인</label>
+                            <input type="password" class="form-control font-size-6" name="pwdCheck" id="join_pwdCheck"
+                                placeholder="데이터 암호화 구현 전이니 사용 빈도가 낮은 암호를 사용해주세요, 수정 가능" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="join_nickname" class="form-label">닉네임</label>
+                            <div class="row">
+                                <input type="text" class="form-control font-size-6 col" name="nickname"
+                                    id="join_nickname" placeholder="1~6자, 중복 불가" maxlength="6" required>
+                                <button type="button" class="btn btn-secondary col-auto ms-2"
+                                    onclick="JoinNicknameCheck()">중복 확인</button>
+                                <script>
+                                    function JoinNicknameCheck() {
+                                        const url = "http://localhost:8080/api/members/nicknameCheck?nickname=" + document.getElementById('join_nickname').value;
+                                        const option = {
+                                            method: 'GET'
+                                        };
+
+                                        fetch(url, option)
+                                            .then((response) => {
+                                                return response.json();
+                                            })
+                                            .then((nicknameCheck) => {
+                                                if (document.getElementById('join_nickname').value.length < 1) {
+                                                    document.getElementById('join_nicknameWarning').innerText="닉네임을 입력해주세요.";
+                                                    document.getElementById('join_nicknameWarning').style.color="red";
+                                                }else {
+                                                    if (nicknameCheckResult != true) {
+                                                        document.getElementById('join_nicknameWarning').innerText="중복된 닉네임입니다.";
+                                                        document.getElementById('join_nicknameWarning').style.color="red";
+                                                    }else{
+                                                        document.getElementById('join_nicknameWarning').innerText="사용 가능한 닉네임입니다.";
+                                                        document.getElementById('join_nicknameWarning').style.color="green";
+                                                        nicknameCheckResult = true;
+                                                    }
+                                                }})
+                                            .catch((error) => {
+                                                console.log(error);
+                                            });
+
+                                    }
+                                </script>
+                            </div>
+                            <div id="join_nicknameWarning" class="font-size-6"></div>
+                        </div>
+
+                        <div class="p-0 mb-0 form-check d-flex justify-content-between">
+                            <a data-bs-target="#modalLogin" data-bs-toggle="modal" data-bs-dismiss="modal" style="
                         cursor: pointer;
-    text-decoration: underline;"
-                        >뒤로</a>
-                        <!--                        <div>-->
-                        <!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-                        <!--                            <label class="form-check-label" for="exampleCheck1">아이디 기억하기</label>-->
-                        <!--                        </div>-->
+    text-decoration: underline;">뒤로</a>
+                            <!--                        <div>-->
+                            <!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+                            <!--                            <label class="form-check-label" for="exampleCheck1">아이디 기억하기</label>-->
+                            <!--                        </div>-->
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
-                    <input type="submit" class="btn btn-primary" onclick="return submitJoinCheck()" value="가입"/>
-                    <script>
-                            function submitJoinCheck(){
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            aria-label="Close">취소</button>
+                        <input type="submit" class="btn btn-primary" onclick="return submitJoinCheck()" value="가입" />
+                        <script>
+                            function submitJoinCheck() {
 
                                 var regExpId = /^[a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣|0-9]/;
 
-                                if( regExpId.test(join_id) ) {
+                                if (regExpId.test(join_id)) {
                                     alert("아이디에 특수 문자가 사용 되었습니다.");
                                     return false;
                                 }
 
-                                if( document.getElementById('join_pwd').value != document.getElementById('join_pwdCheck').value ) {
+                                if (document.getElementById('join_pwd').value != document.getElementById('join_pwdCheck').value) {
                                     alert("비밀번호가 일치 하지 않습니다");
                                     return false;
                                 }
+
+                                if (idCheckResult == false) {
+                                    alert("사용 할 수 없는 아이디입니다.");
+                                    return false;
+                                }
+
+                                if (nicknameCheckResult == false) {
+                                    alert("사용 할 수 없는 닉네임입니다.");
+                                    return false;
+                                }
+
                             }
 
-                    </script>
-                </div>
+                        </script>
+                    </div>
 
 
                 </form>
             </div>
         </div>
     </div>
+    <!--  중복체크용 변수설정  -->
+    <script>
+        var idCheckResult = new Boolean(false);
+        var nicknameCheckResult = new Boolean(false);
+    </script>
 </div>
 
 <!--로그인 버튼은 밑의 형식처럼 만들기-->

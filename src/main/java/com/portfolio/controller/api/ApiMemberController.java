@@ -4,10 +4,7 @@ import com.portfolio.domain.member.MemberDTO;
 import com.portfolio.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,17 +23,19 @@ public class ApiMemberController {
     }
 
     @PostMapping("/login")
-    public String login(MemberDTO memberDTO, Model model, HttpServletRequest request) {
+    @ResponseBody
+    public Boolean login(@RequestBody MemberDTO memberDTO, HttpServletRequest request) { // 포스트로 전달할 땐 RequestBOdy로 받아야 함
         HttpSession session = request.getSession();
+        System.out.println(memberService.login(memberDTO));
         memberService.login(memberDTO);
         if(memberService.login(memberDTO) != null){//true일떄
             System.out.println(memberService.login(memberDTO));
             session.setAttribute("login", memberService.login(memberDTO));
+            return true;
         }else{
-            model.addAttribute("warning", "아이디 혹은 비밀번호가 일치하지 않습니다.");
             System.out.println("컨트롤러-로그인 실패");
         };
-        return "redirect:/";
+        return false;
     }
 
     @GetMapping("/logout")
@@ -46,20 +45,48 @@ public class ApiMemberController {
         return "redirect:/";
     }
 
-    @GetMapping("/update/nickname")
-    public String updateNickname(MemberDTO memberDTO,HttpServletRequest request) {
+    @PatchMapping("/nickname")
+    public void updateNickname(@RequestBody MemberDTO memberDTO,HttpServletRequest request) {
         HttpSession session = request.getSession();
         memberService.updateNickname(memberDTO);
+        System.out.println(memberDTO);
         session.setAttribute("login",memberService.getMember(memberDTO));
-        return "redirect:/";
     }
 
-    @GetMapping("/update/pwd")
-    public String updatePwd(MemberDTO memberDTO,HttpServletRequest request) {
+    @PatchMapping("/pwd")
+    public void updatePwd(@RequestBody MemberDTO memberDTO,HttpServletRequest request) {
         HttpSession session = request.getSession();
         memberService.updatePwd(memberDTO);
+        System.out.println(memberDTO);
         session.setAttribute("login",memberService.getMember(memberDTO));
-        return "redirect:/";
+    }
+
+    @GetMapping("/idCheck")
+    @ResponseBody
+    public boolean idCheck(String id) {
+        System.out.println("서비스 실행시 콘솔");
+        System.out.println(memberService.idCheck(id));
+        if(memberService.idCheck(id) != null){
+            System.out.println("컨트롤러-아디 중복");
+            return false;
+        }else{
+            System.out.println("컨트롤러-아디 사용가능");
+            return true;
+        }
+    }
+
+    @GetMapping("/nicknameCheck")
+    @ResponseBody
+    public boolean nicknameCheck(String nickname) {
+        System.out.println("서비스 실행시 콘솔");
+        System.out.println(memberService.nicknameCheck(nickname));
+        if(memberService.nicknameCheck(nickname) != null){
+            System.out.println("컨트롤러-닉넴 중복");
+            return false;
+        }else{
+            System.out.println("컨트롤러-닉넴 사용가능");
+            return true;
+        }
     }
 
 }
