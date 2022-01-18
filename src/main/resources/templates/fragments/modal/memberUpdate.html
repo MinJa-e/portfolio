@@ -75,7 +75,7 @@
 
 <!--                <hr>-->
     <form onsubmit="return false;" onkeyup="if(window.event.keyCode == 13){updatePwd();}">
-        <div>
+        <div> 
                     <div class="my-4 mb-3">
                         <label for="memberUpdate_pwd" class="form-label">비밀번호</label>
                         <input type="password" class="form-control" name="pwd" id="memberUpdate_pwd" placeholder="">
@@ -85,11 +85,9 @@
                         <label for="memberUpdate_pwdCheck" class="form-label">비밀번호 확인</label>
                         <input type="password" class="form-control" name="pwdCheck" id="memberUpdate_pwdCheck" placeholder="">
                     </div>
-                    <div class="row justify-content-end" style="--bs-gutter-x:0;">
-                        <div class="row justify-content-between" style="--bs-gutter-x:0;">
-                            <div id="Update_PwdWarning" class="col-auto font-size-6" style="color:red;"></div>
-                            <button class="col-auto btn btn-primary" onclick="updatePwd()" type="button">변경</button>
-                        </div>
+                    <div class="row justify-content-between" style="--bs-gutter-x:0;">
+                        <div id="Update_PwdWarning" class="col-auto font-size-6" style="color:red;"></div>
+                        <button class="col-auto btn btn-primary" onclick="updatePwd()" type="button">변경</button>
                     </div>
                         <script>
                             function updatePwd(){

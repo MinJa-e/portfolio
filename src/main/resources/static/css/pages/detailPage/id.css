@@ -28,4 +28,5 @@
     margin: auto;
     border-radius: 1rem;
     box-shadow: rgb(0 0 0 / 40%) 10px 10px 20px 0px;
+    min-width:900px;
 }

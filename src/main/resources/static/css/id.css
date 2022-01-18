@@ -5,7 +5,7 @@
   bottom: 6.9vh;
   right: 1vw;
   cursor: pointer;
-  z-index: 999999999999;
+  z-index: 1040;
   border-radius: 100%;
   box-shadow: rgb(0 0 0 / 20%) 5px 5px 20px 0px;
 }
