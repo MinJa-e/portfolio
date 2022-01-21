@@ -1,6 +1,6 @@
 #talkBackground {
   position: relative;
-  height: 89vh;
+  height: 90.6vh;
 }
 #talkBackground:after {
   content: "";
@@ -21,9 +21,9 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   margin: auto;
-  width: 50vw;
-  min-width: none;
-  max-width: 760px;
+  width: 760px;
+  /*min-width: 760px;
+  max-width: 760px;*/
   max-height: 80vh;
   background: white;
   border-radius: 1rem;
@@ -31,8 +31,8 @@
 }
 #talkMain {
   margin: auto;
-  width: 45vw;
-  max-width: 684px;
+  width: 684px;;
+  /*max-width: 684px;*/
 }
 .is-valid {
   border-color: #ced4da !important;

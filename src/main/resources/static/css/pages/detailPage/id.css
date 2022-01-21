@@ -1,8 +1,9 @@
 #detailPageBackground {
   position: relative;
-    padding-top:2.5%!important;
-    padding-bottom:2.5%!important;
-/*  background: white;*/
+  padding-top: 2.5% !important;
+  padding-bottom: 2.5% !important;
+  min-height: 88.4vh;
+  /*  background: white;*/
 }
 
 #detailPageBackground:after {
@@ -20,13 +21,13 @@
 }
 
 #detailPageSection {
-    background:white;
-    width:50%;
-    padding:2%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    margin: auto;
-    border-radius: 1rem;
-    box-shadow: rgb(0 0 0 / 40%) 10px 10px 20px 0px;
-    min-width:900px;
+  background: white;
+  width: 50%;
+  padding: 2%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  margin: auto;
+  border-radius: 1rem;
+  box-shadow: rgb(0 0 0 / 40%) 10px 10px 20px 0px;
+  min-width: 900px;
 }

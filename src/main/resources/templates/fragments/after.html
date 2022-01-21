@@ -10,10 +10,7 @@
 top: 28vh;
 top: 47vh;
 
-<div id="remote" th:fragment="remote" style="
-top: 28vh;
-    left: -0.2vw;
-    position: fixed;">
+<div id="remote" th:fragment="remote" >
         <div class="btn-group-vertical">
                 <a type="button" href="#whoIsMe" class="btn btnWho">Who</a>
                 <a type="button" href="#skills" class="btn btnSkills" >Skills</a>
@@ -25,10 +22,18 @@ top: 28vh;
 
 <script th:fragment="alertWarning">
         function alertWarning() {
-                document.getElementById('bodyTop').innerHTML = '<div id="alertWarning" class="alert alert-danger alert-dismissible fade show position-fixed" role="alert" style="left: 50%;transform: translateX(-50%);top: 7.07vh;z-index:1;"><i class="bi bi-exclamation-triangle-fill font-size-4 margin-right-05 align-top"></i><b class="margin-right-05"> 아직 구현되지 않은 페이지입니다. 조금만 기다려주세요!</b><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="alertWarningClose()"></button></div>';
+                document.getElementById('bodyTop').innerHTML = '<div id="alertWarning" class="alert alert-danger alert-dismissible fade show position-fixed" role="alert" style="left: 50%;transform: translateX(-50%);top: 72px;z-index:1061;"><i class="bi bi-exclamation-triangle-fill font-size-4 margin-right-05 align-top"></i><b class="margin-right-05"> 아직 구현되지 않은 페이지입니다. 조금만 기다려주세요!</b><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="alertWarningClose()"></button></div>';
                 document.getElementById('bodyTop').style.opacity = "100%";
         }
         function alertWarningClose() {
+                document.getElementById('bodyTop').style.opacity = "0%";
+        }
+
+        function alertTalkWarning() {
+                document.getElementById('bodyTop').innerHTML = '<div id="alertTalkWarning" class="alert alert-danger alert-dismissible fade show position-fixed" role="alert" style="left: 50%;transform: translateX(-50%);top: 72px;z-index:1061;"><i class="bi bi-exclamation-triangle-fill font-size-4 margin-right-05 align-top"></i><b class="margin-right-05"> 방명록은 로그인 후, 사용하실 수 있습니다!</b><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="alertTalkWarningClose()"></button></div>';
+                document.getElementById('bodyTop').style.opacity = "100%";
+        }
+        function alertTalkWarningClose() {
                 document.getElementById('bodyTop').style.opacity = "0%";
         }
 </script>

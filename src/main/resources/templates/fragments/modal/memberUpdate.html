@@ -20,7 +20,7 @@
                         <script>
         var nicknameCheckResult = new Boolean(false);
                                     function updateNickname() {
-                                        const url = "http://localhost:8080/api/members/nicknameCheck?nickname=" + document.getElementById('memberUpdate_nickname').value;
+                                        const url = "http://leeniesta.cafe24.com/api/members/nicknameCheck?nickname=" + document.getElementById('memberUpdate_nickname').value;
                                         const option = {
                                             method: 'GET'
                                         };
@@ -47,7 +47,7 @@
                                 </script>
                     <script>
                                     function updateNicknameOk() {
-                                        const url = "http://localhost:8080/api/members/nickname";
+                                        const url = "http://leeniesta.cafe24.com/api/members/nickname";
                                         const option = {
                                             method: 'PATCH',
                                               body: JSON.stringify({
@@ -103,7 +103,7 @@
                                     if(document.getElementById('memberUpdate_pwd').value == document.getElementById('memberUpdate_pwdCheck').value &&
                                     document.getElementById('memberUpdate_pwd').value. length > 1 && document.getElementById('memberUpdate_pwdCheck').value. length > 1){
                                         
-                                        const url = "http://localhost:8080/api/members/pwd";
+                                        const url = "http://leeniesta.cafe24.com/api/members/pwd";
                                         const option = {
                                             method: 'PATCH',
                                               body: JSON.stringify({

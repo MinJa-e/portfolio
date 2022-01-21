@@ -5,10 +5,11 @@
 <head>
     <link th:href="@{/css/pages/portfolio/id.css}" rel="stylesheet">
     <link th:href="@{/css/pages/portfolio/class.css}" rel="stylesheet">
+    <link th:href="@{/css/pages/portfolio/mobile.css}" rel="stylesheet">
 </head>
 <main layout:fragment="content">
     <div id="portfolio">
-        <div th:replace="fragments/portfolio/WhoisMe :: WhoIsMe"/>
+        <div th:replace="fragments/portfolio/WhoIsMe :: WhoIsMe"/>
         <div th:replace="fragments/portfolio/Skills :: Skills"/>
         <div th:replace="fragments/portfolio/Projects :: Projects"/>
         <div th:replace="fragments/portfolio/FAQ :: FAQ"/>

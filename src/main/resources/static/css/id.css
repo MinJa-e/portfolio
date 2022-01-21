@@ -1,4 +1,26 @@
-#upBtn >img {
+#header {
+  height: 6vh;
+  min-height: 32px;
+  max-height: 48px;
+    background: hsl(0deg 0% 11%) !important;
+}
+
+#footer {
+  height: 5vh;
+  width: 100%;
+  min-height: 32px;
+    background: hsl(0deg 0% 11%) !important;
+  color: white;
+  white-space: nowrap;
+}
+
+#remote {
+  top: 27.7vh;
+  left: -0.2vw;
+  position: fixed;
+}
+
+#upBtn > img {
   width: 3rem;
   height: 3rem;
   position: fixed;

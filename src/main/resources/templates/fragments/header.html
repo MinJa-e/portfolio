@@ -5,7 +5,7 @@
     <th:block th:if="${session.login == null}">
         <div th:replace="fragments/modal/login :: login"/>
     </th:block>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height:6vh;min-height:32px;"><!---->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="header"><!---->
         <div class="container-fluid justify-content-between">
             <!--로고-->
             <div id="headerLeft" class="col-3">
@@ -46,7 +46,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a th:if="${session.login != null}" class="dropdown-item" href="/talk">Talk</a></li>
-                                <li><a th:if="${session.login == null}"class="dropdown-item" data-bs-toggle="modal" href="#modalLogin">Talk</a></li>
+                                <li><a th:if="${session.login == null}"class="dropdown-item" data-bs-toggle="modal" href="#modalLogin" onclick="alertTalkWarning()">Talk</a></li>
                             </ul>
                         </li>
                     </ul>

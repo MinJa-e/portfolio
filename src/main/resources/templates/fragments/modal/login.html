@@ -35,7 +35,7 @@
                         <script>
                             function submitLoginCheck() {
 
-                                const url = "http://localhost:8080/api/members/login";
+                                const url = "http://leeniesta.cafe24.com/api/members/login";
                                         const option = {
                                               method: 'POST',
                                               body: JSON.stringify({
@@ -98,7 +98,7 @@
                                 <script>
                                     function JoinIdCheck() {
 
-                                        const url = "http://localhost:8080/api/members/idCheck?id=" + document.getElementById('join_id').value;
+                                        const url = "http://leeniesta.cafe24.com/api/members/idCheck?id=" + document.getElementById('join_id').value;
                                         const option = {
                                             method: 'GET'
                                         };
@@ -151,7 +151,7 @@
                                     onclick="JoinNicknameCheck()">중복 확인</button>
                                 <script>
                                     function JoinNicknameCheck() {
-                                        const url = "http://localhost:8080/api/members/nicknameCheck?nickname=" + document.getElementById('join_nickname').value;
+                                        const url = "http://leeniesta.cafe24.com/api/members/nicknameCheck?nickname=" + document.getElementById('join_nickname').value;
                                         const option = {
                                             method: 'GET'
                                         };
@@ -161,6 +161,7 @@
                                                 return response.json();
                                             })
                                             .then((nicknameCheck) => {
+                                                nicknameCheckResult = nicknameCheck;
                                                 if (document.getElementById('join_nickname').value.length < 1) {
                                                     document.getElementById('join_nicknameWarning').innerText="닉네임을 입력해주세요.";
                                                     document.getElementById('join_nicknameWarning').style.color="red";
