@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -28,7 +30,12 @@ public class controller {
     }
 
     @GetMapping("talk")
-    public String talkList(Criteria criteria, Model model) {
+    public String talkList(Criteria criteria, Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.getAttribute("login");
+        if(session.getAttribute("login") == null){
+            return "redirect:/";
+        }
 
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(criteria);

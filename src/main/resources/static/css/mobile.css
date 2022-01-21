@@ -1,0 +1,26 @@
+@media (max-width: 1080px) {
+  #header {
+    height: 3vh;
+    background: hsl(0deg 0% 11%) !important;
+  }
+
+  #footer {
+    height: 2.5vh;
+    width: 100%;
+    min-height: 32px;
+    background: hsl(0deg 0% 11%) !important;
+    color: white;
+    white-space: nowrap;
+    position:fixed;
+    bottom:0%;
+    box-sizing:unset;
+  }
+
+
+
+  #remote {
+    display: none;
+  }
+
+
+}
