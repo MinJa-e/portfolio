@@ -1,6 +1,5 @@
 package com.portfolio.service.talk;
 
-
 import com.portfolio.domain.talk.TalkDTO;
 import com.portfolio.mapper.talk.TalkMapper;
 import com.portfolio.pagination.Criteria;
@@ -14,7 +13,6 @@ import java.util.List;
 public class TalkServiceImpl implements TalkService {
 
     private final TalkMapper talkMapper;
-
 
     @Override
     public void create(TalkDTO talkDTO) {

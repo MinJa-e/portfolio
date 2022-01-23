@@ -20,7 +20,7 @@ public class ApiTalkController {
     }
 
     @GetMapping("/{talkNum}")
-    public TalkDTO get(@PathVariable int talkNum){
+    public TalkDTO get(@PathVariable int talkNum) {
         return talkService.get(talkNum);
     }
 

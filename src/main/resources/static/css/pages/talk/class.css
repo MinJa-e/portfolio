@@ -3,7 +3,7 @@
   color: #fff;
   background-color: black;
   border-color: black;
-/*  background-color: hsl(0deg 0% 30%);
+  /*  background-color: hsl(0deg 0% 30%);
   border-color: hsl(0deg 0% 30%);*/
 }
 
@@ -40,9 +40,9 @@
   outline: 0;
 }
 .form-control:focus {
-    color: #212529;
-    background-color: #fff;
-    border-color: rgb(0 0 0 / 65%);
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgb(0 0 0 / 20%);
+  color: #212529;
+  background-color: #fff;
+  border-color: rgb(0 0 0 / 65%);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 0 0 / 20%);
 }

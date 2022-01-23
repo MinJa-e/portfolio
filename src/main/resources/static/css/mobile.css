@@ -11,16 +11,12 @@
     background: hsl(0deg 0% 11%) !important;
     color: white;
     white-space: nowrap;
-    position:fixed;
-    bottom:0%;
-    box-sizing:unset;
+    position: fixed;
+    bottom: 0%;
+    box-sizing: unset;
   }
-
-
 
   #remote {
     display: none;
   }
-
-
 }

@@ -1,12 +1,12 @@
 @media (max-width: 1080px) {
-    #footer {
-        height: 2.5vh;
-        width: 100%;
-        min-height: 32px;
-        background: #212529;
-        color: white;
-        white-space: nowrap;
-        position:unset;
-        box-sizing:unset;
-    }
+  #footer {
+    height: 2.5vh;
+    width: 100%;
+    min-height: 32px;
+    background: #212529;
+    color: white;
+    white-space: nowrap;
+    position: unset;
+    box-sizing: unset;
+  }
 }

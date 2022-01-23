@@ -14,5 +14,4 @@ public class TalkDTO {
     private Boolean talkLock;
     private String id;
 
-
 }

@@ -1,50 +1,51 @@
-
 #whoIsMe > div > div > div > div > h4 > .bi {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-#contact > div > div > div > a > .bi::before, #contact > div > div > div > .bi, #contact > div > div > div > a > img {
-    color:black;
+#contact > div > div > div > a > .bi::before,
+#contact > div > div > div > .bi,
+#contact > div > div > div > a > img {
+  color: black;
   margin-right: 1rem;
   font-size: 1.6rem;
   height: 1.6rem;
 }
 
 #contact > div > div > div {
-  padding:0;
+  padding: 0;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 #contact > div > div > div > * {
-    margin:0;
+  margin: 0;
 }
 
 #contact > div > .row {
-    margin-bottom: 0.7rem;
-    height:2.25rem;
+  margin-bottom: 0.7rem;
+  height: 2.25rem;
 }
 
 #contact > div > div > div > button {
-    color: hsl(0deg 0% 30%);
+  color: hsl(0deg 0% 30%);
 }
 
-.btn-mj{
-    background-color:hsl(208deg 64% 80%);
-    border-color:hsl(208deg 64% 80%);
+.btn-mj {
+  background-color: hsl(208deg 64% 80%);
+  border-color: hsl(208deg 64% 80%);
 }
 
-.btn-mj:hover{
-    background-color:hsl(208deg 64% 68%);
-    border-color:hsl(208deg 64% 68%);
+.btn-mj:hover {
+  background-color: hsl(208deg 64% 68%);
+  border-color: hsl(208deg 64% 68%);
 }
-.btn-warning:hover{
-    background-color:hsl(45deg 100% 45%);
-    border-color:hsl(45deg 100% 45%);
+.btn-warning:hover {
+  background-color: hsl(45deg 100% 45%);
+  border-color: hsl(45deg 100% 45%);
 }
 
 .btn-light:hover {
-    background-color: hsl(0deg 0% 95.4%);
+  background-color: hsl(0deg 0% 95.4%);
 }
 
 .skillsIcon {
@@ -88,11 +89,11 @@
 }
 
 .projectImage {
-    position:absolute;
+  position: absolute;
   width: 100%;
   height: 100%;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   box-shadow: rgb(0 0 0 / 55%) 5px 5px 20px 0px;
 }
 #projectsTab > div > ul {
@@ -161,70 +162,73 @@
   margin-bottom: 0.351rem !important;
 }
 
-.accordion{
-    width: 74%;
-    padding: 0;
-    box-shadow: rgb(0 0 0 / 20%) 5px 5px 20px 0px !important;
+.accordion {
+  width: 74%;
+  padding: 0;
+  box-shadow: rgb(0 0 0 / 20%) 5px 5px 20px 0px !important;
 }
 
 .accordion-item {
-    border: 1px solid rgb(0 0 0 / 45%)
+  border: 1px solid rgb(0 0 0 / 45%);
 }
 
 .accordion-button {
-    font-weight: bold;
-    color: hsl(0deg 0% 26%);
-    background-color: hsl(112deg 64% 81%);
+  font-weight: bold;
+  color: hsl(0deg 0% 26%);
+  background-color: hsl(112deg 64% 81%);
 }
 
 .accordion-button:hover {
-     background-color: hsl(112deg 64% 68.99%);
-     z-index: 2;
- }
+  background-color: hsl(112deg 64% 68.99%);
+  z-index: 2;
+}
 
 .accordion-button:not(.collapsed) {
-    color: #000000;
-    background-color: hsl(112deg 64% 68.99%);
-    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 35%);
+  color: #000000;
+  background-color: hsl(112deg 64% 68.99%);
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 35%);
 }
 
 .accordion-body {
-    padding: 1rem 1.25rem;
-    color: hsl(0deg 0% 30%);
+  padding: 1rem 1.25rem;
+  color: hsl(0deg 0% 30%);
 }
 
 .nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: hsl(182deg 65% 54%);
-    text-decoration: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: hsl(182deg 65% 54%);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }
 
-.nav-link:hover, .nav-link:focus {
-    color: hsl(182deg 65% 30%);
+.nav-link:hover,
+.nav-link:focus {
+  color: hsl(182deg 65% 30%);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: hsl(182deg 65% 54%);
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: hsl(182deg 65% 54%);
 }
 
-.popover-element{
-        position: inherit!important;
-        border:none!important;
+.popover-element {
+  position: inherit !important;
+  border: none !important;
 }
 
-.popover{
+.popover {
   font-family: "Noto Sans KR" !important;
-  z-index:0!important;
+  z-index: 0 !important;
 }
 
-.popover-header{
-    font-weight:bold;
-    font-size:1rem;
+.popover-header {
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.popover-body{
-    font-size:0.875rem;
+.popover-body {
+  font-size: 0.875rem;
 }

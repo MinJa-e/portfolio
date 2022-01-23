@@ -15,78 +15,89 @@
   font-family: "Black Han Sans", "Noto Sans KR", sans-serif;
 }
 
+.title-sub {
+  margin-top: 0.72rem;
+  margin-bottom: 2rem;
+  color: rgb(0 0 0 / 40%);
+  font-weight: 500;
+  font-family: "Noto Sans KR";
+  font-size: 1rem;
+}
+
 .padding-section {
   padding-bottom: 60px !important;
 }
 
-.portfolio-width{
-    min-width:560px;
-    max-width:894px;
-    margin:0 auto;
+.portfolio-width {
+  min-width: 560px;
+  max-width: 894px;
+  margin: 0 auto;
 }
 
-.btn-group-vertical > a{
-    font-weight: bold;
-    color:hsl(0deg 0% 31.1%);
-    text-align:start;
-    box-shadow: none!important;
-    border-color: hsl(0deg 0% 36% / 99%);
+.btn-group-vertical > a {
+  font-weight: bold;
+  color: hsl(0deg 0% 31.1%);
+  text-align: start;
+  box-shadow: none !important;
+  border-color: hsl(0deg 0% 36% / 99%);
 }
 
-.btn-group-vertical > a:hover, .btn-group-vertical > a:focus{
-    color:hsl(0deg 0% 0%);
+.btn-group-vertical > a:hover,
+.btn-group-vertical > a:focus {
+  color: hsl(0deg 0% 0%);
 }
 
-.navbar-nav > .nav-item > .nav-link:hover, .navbar-nav > .nav-item > .nav-link:focus {
-    color: rgb(255 255 255 / 99%);
+.navbar-nav > .nav-item > .nav-link:hover,
+.navbar-nav > .nav-item > .nav-link:focus {
+  color: rgb(255 255 255 / 99%);
 }
 
-.btnWho{
-    background:hsl(0deg 0% 100%);
+.btnWho {
+  background: hsl(0deg 0% 100%);
 }
 
-.btnWho:hover{
-    background:hsl(0deg 0% 96.8%);
+.btnWho:hover {
+  background: hsl(0deg 0% 96.8%);
 }
 
-.btnSkills{
-    background:hsl(58deg 65% 91%)
+.btnSkills {
+  background: hsl(58deg 65% 91%);
 }
 
-.btnSkills:hover{
-    background:hsl(58deg 65% 83%)
+.btnSkills:hover {
+  background: hsl(58deg 65% 83%);
 }
 
-.btnProjects{
-    background:hsl(182deg 65% 91%)
+.btnProjects {
+  background: hsl(182deg 65% 91%);
 }
 
-.btnProjects:hover{
-    background:hsl(182deg 65% 83%)
+.btnProjects:hover {
+  background: hsl(182deg 65% 83%);
 }
 
-.btnFAQ{
-    background:hsl(112deg 65% 91%)
+.btnFAQ {
+  background: hsl(112deg 65% 91%);
 }
 
-.btnFAQ:hover{
-    background:hsl(112deg 65% 83%)
+.btnFAQ:hover {
+  background: hsl(112deg 65% 83%);
 }
 
-.btnContact{
-    background:hsl(208deg 65% 91%)
+.btnContact {
+  background: hsl(208deg 65% 91%);
 }
 
-.btnContact:hover{
-    background:hsl(208deg 65% 83%)
+.btnContact:hover {
+  background: hsl(208deg 65% 83%);
 }
 
 .dropdown-menu {
-    min-width: 7.4rem;
+  min-width: 7.4rem;
 }
 
 #headerRight > .btn-group > button {
-    box-shadow:none;
-    border:none;
-    background:hsl(0deg 0% 0% / 0%);
+  box-shadow: none;
+  border: none;
+  background: hsl(0deg 0% 0% / 0%);
 }

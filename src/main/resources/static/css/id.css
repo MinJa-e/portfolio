@@ -2,14 +2,14 @@
   height: 6vh;
   min-height: 32px;
   max-height: 48px;
-    background: hsl(0deg 0% 11%) !important;
+  background: hsl(0deg 0% 11%) !important;
 }
 
 #footer {
   height: 5vh;
   width: 100%;
   min-height: 32px;
-    background: hsl(0deg 0% 11%) !important;
+  background: hsl(0deg 0% 11%) !important;
   color: white;
   white-space: nowrap;
 }

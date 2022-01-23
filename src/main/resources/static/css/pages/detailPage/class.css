@@ -1,10 +1,8 @@
-
-
 #detailPageBackground > div > .row {
-    margin-bottom:0.4rem;
+  margin-bottom: 0.4rem;
 }
 
-#detailPageBackground > div  > .row > .col-2{
-    text-align : end;
-    font-weight: bold;
+#detailPageBackground > div > .row > .col-2 {
+  text-align: end;
+  font-weight: bold;
 }

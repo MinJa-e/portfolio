@@ -1,5 +1,5 @@
 #portfolio {
-position:relative;
+  position: relative;
   color: black;
   text-align: center;
   width: 100%;
@@ -89,6 +89,6 @@ position:relative;
   /* opacity : 0.6; */
   z-index: -1;
 }
-#whoIsMePhoto:hover{
-  box-shadow: rgb(0 0 0 / 65%) 0px 0px 16px 6px!important;
+#whoIsMePhoto:hover {
+  box-shadow: rgb(0 0 0 / 65%) 0px 0px 16px 6px !important;
 }

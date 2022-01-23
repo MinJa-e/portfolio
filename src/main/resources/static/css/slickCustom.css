@@ -1,48 +1,48 @@
-.your-class{
-    text-align:center;
-    font-weight:bold;
-    margin-bottom:2rem;
+.your-class {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
-.slick-slide img{
-    width:100%;
-    margin:auto;
+.slick-slide img {
+  width: 100%;
+  margin: auto;
 }
 
-.slick-prev{
-    left:1.75%;
+.slick-prev {
+  left: 1.75%;
 }
-.slick-next{
-    right:1.75%;
+.slick-next {
+  right: 1.75%;
 }
-.slick-arrow{
-    position:absolute;
-    z-index:1;
-    width: 2.25rem;
-    height: 2.25rem;
-    top:45%;
-    border: 0px;
-    background: hsl(0deg 0% 100% / 55%);
-    color: hsl(0deg 0% 28% / 62%);
-    border-radius: 100%;
-    font-weight: bold;
-    font-size: 1.25rem;
-}
-
-.slick-arrow-black{
-    position:absolute;
-    z-index:1;
-    width: 2.25rem;
-    height: 2.25rem;
-    top:45%;
-    border: 0px;
-    background: hsl(0deg 0% 0% / 40%);
-    color: hsl(0deg 0% 100% / 80%);
-    border-radius: 100%;
-    font-weight: bold;
-    font-size: 1.25rem;
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  width: 2.25rem;
+  height: 2.25rem;
+  top: 45%;
+  border: 0px;
+  background: hsl(0deg 0% 100% / 55%);
+  color: hsl(0deg 0% 28% / 62%);
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
-.slick-arrow:hover{
-    box-shadow: rgb(0 0 0 / 18%) 6px 6px 20px 1px;
+.slick-arrow-black {
+  position: absolute;
+  z-index: 1;
+  width: 2.25rem;
+  height: 2.25rem;
+  top: 45%;
+  border: 0px;
+  background: hsl(0deg 0% 0% / 40%);
+  color: hsl(0deg 0% 100% / 80%);
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.slick-arrow:hover {
+  box-shadow: rgb(0 0 0 / 18%) 6px 6px 20px 1px;
 }

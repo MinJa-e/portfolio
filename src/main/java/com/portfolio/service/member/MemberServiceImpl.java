@@ -1,6 +1,5 @@
 package com.portfolio.service.member;
 
-
 import com.portfolio.domain.member.MemberDTO;
 import com.portfolio.mapper.member.MemberMapper;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
     private final MemberMapper memberMapper;
 
@@ -19,7 +18,7 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public MemberDTO login(MemberDTO memberDTO) {
-            return memberMapper.login(memberDTO);
+        return memberMapper.login(memberDTO);
 
     }
 
@@ -47,6 +46,5 @@ public class MemberServiceImpl implements MemberService{
     public void updatePwd(MemberDTO memberDTO) {
         memberMapper.updatePwd(memberDTO);
     }
-
 
 }

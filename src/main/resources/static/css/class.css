@@ -294,7 +294,14 @@
   padding-right: 2.5rem;
 }
 
-.top-custom{
-    top: 46% !important;
+.top-custom {
+  top: 46% !important;
 }
 
+.font-family-blackH{
+    font-family: 'Black Han Sans';
+}
+
+.font-family-notoS{
+    font-family: 'Noto Sans KR';
+}
