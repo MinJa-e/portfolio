@@ -63,4 +63,9 @@ public class controller {
     public String detailPagePortfolio() {
         return "views/detailPage/portfolio";
     }
+
+    @GetMapping("detailPage/footballCom")
+    public String detailPagefootballCom() {
+        return "views/detailPage/footballCom";
+    }
 }
