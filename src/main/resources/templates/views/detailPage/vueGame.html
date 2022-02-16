@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link th:href="@{/css/pages/detailPage/id.css}" rel="stylesheet">
+    <link th:href="@{/css/pages/detailPage/class.css}" rel="stylesheet">
+    <link th:href="@{/css/pages/detailPage/mobile.css}" rel="stylesheet">
+    <link th:href="@{/css/slickCustom.css}" rel="stylesheet">
+</head>
+
+<main layout:fragment="content">
+
+    <div id="detailPageBackground">
+        <div id="detailPageSection">
+            <h1 class="title">
+                프로젝트 상세페이지
+            </h1>
+            <!--슬릭같은 라이브러리 이용해서 사진 슬라이드 구현-->
+
+        <div class="your-class">
+            <div><img th:src="@{/img/projectImage/footballCom/footballComWrite.png}">글 쓰기 페이지</div>
+        </div>
+
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                주제
+            </div>
+            <div class="col">
+                Vue로 제작한 가위바위보 게임 페이지
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                상세 설명
+            </div>
+            <div class="col">
+                프론트 엔드 프레임 워크에 대한 호기심 및 공부의 필요성을 느끼고 Vue를 통해 간단하게 만들어본 가위바위보 게임 페이지
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                주요 기능
+            </div>
+            <div class="col">
+                <ol style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>
+                </ol>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                사용 기술
+            </div>
+            <div class="col">
+                <ul style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>Front-end : HTML / CSS / 부트스트랩 / Vue
+                    <li>Back-end : X
+                    <li>Others : VSC
+                </ul>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                개발 기간
+            </div>
+            <div class="col">
+                <p>
+                    2021년 12월 6일 ~ 2021년 12월 6일 ( 총 1일 소요 )
+                </p>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                개발 인원
+            </div>
+            <div class="col">
+                1인
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                깃허브
+            </div>
+            <div class="col">
+                <a href="https://github.com/MinJa-e/footballCheck">github.com/MinJa-e/footballCheck</a>
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                링크
+            </div>
+            <div class="col">
+                <a href="http://leeniesta.cafe24.com/footballCheck/">leeniesta.cafe24.com/footballCheck</a>
+
+            </div>
+        </div>
+        <div class="row"><!--컬럼 하나-->
+            <div class="col-2">
+                느낀 점
+            </div>
+            <div class="col">
+                <ol style="padding-left: 1rem;margin-bottom:0px;">
+                    <li>
+                </ol>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</main>
+
+</html>
+<div th:replace="fragments/after :: upBtn"/>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+      $('.your-class').slick({
+speed: 300,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  cssEase: 'linear',
+  prevArrow : "<button type='button' class='slick-prev slick-arrow'><</button>",		// 이전 화살표 모양 설정
+  nextArrow : "<button type='button' class='slick-next slick-arrow'>></button>",		// 다음 화살표 모양 설정
+});
+    </script>
+
+<script type="text/javascript">
+$('.your-class').slick();
+    </script>
