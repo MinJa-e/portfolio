@@ -68,4 +68,14 @@ public class controller {
     public String detailPagefootballCom() {
         return "views/detailPage/footballCom";
     }
+
+    @GetMapping("detailPage/vueGame")
+    public String detailPagevueGame() {
+        return "views/detailPage/vueGame";
+    }
+
+    @GetMapping("detailPage/plzIceCream")
+    public String detailPageplzIceCream() {
+        return "views/detailPage/plzIceCream";
+    }
 }
