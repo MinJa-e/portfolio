@@ -47,12 +47,12 @@
             </div>
             <div class="col">
                 <ol style="padding-left: 1rem;margin-bottom:0px;">
-                    <li>최신 게시글의 핵심 내용들이 메인 페이지에 썸네일로 올라가는 식의 이미지 게시판 구현
-                    <li>이미지가 많이 다뤄지는 게시판 특성상, 다양한 형식으로 글을 쓸 수 있게 'CK에디터'라는 위지윅 에디터 구현
-                    <li>스프링 내부에 구현되있는 파일 관련 인터페이스를 통해, 파일&이미지 업로드 구현
-                    <li>myBatis의 조건절과 타임리프의 'classappend'구문을 이용해 검색 기능 및 카테고리별로 정렬 할 수 있는 탭 구현
+                    <li>최신 게시글의 핵심 이미지들을 선택적으로 메인 페이지에 썸네일로 올릴 수 있도록 로직 구현
+                    <li>이미지를 많이 다루는 게시판 특성 상, 다양한 형식으로 글을 쓸 수 있게 'CK에디터'라는 위지윅 에디터 구현
+                    <li>스프링 내부에 구현 되어있는 인터페이스를 통해, 파일&이미지 업로드 구현
+                    <li>MyBatis의 조건절과 타임리프의 'classappend'구문으로 검색 및 카테고리 탭 구현
                     <li>SQL에 있는 ORDER BY / LIMIT 등의 구문을 이용해 게시글의 이전 글과 다음 글을 읽어내는 로직 구현
-                    <li>SQL의 UPDATE 구문을 이용해 게시글 조회수를 구현, 스프링 시큐리티 구현 이후 추천 및 인기글 기능도 추가 예정
+                    <li>SQL의 UPDATE 구문을 이용해 게시글 조회수를 구현, 스프링 시큐리티 구현 후, 추천 및 인기글도 추가 예정
 <!--                        1. CK에디터/스프링 인터페이스를 통한 파일 업로드 구현<br>-->
 <!--                        2. myBatis의 조건절을 통한 검색 기능/카테고리 탭 구현<br>-->
 <!--                        3. 최신 게시물의 이미지가 메인 페이지에 등록되도록 구현-->
@@ -66,9 +66,9 @@
             </div>
             <div class="col">
                 <ul style="padding-left: 1rem;margin-bottom:0px;">
-                    <li>Front-end : HTML / CSS / JS / 제이쿼리 / 부트스트랩 / 타임리프
-                    <li>Back-end : 스프링부트 / myBatis
-                    <li>Others : mySQL / IntelliJ / VSC
+                    <li>Front-end : HTML / CSS / Javascript / JQuery / Bootstrap / Thymeleaf
+                    <li>Back-end : Spring Boot / MyBatis
+                    <li>Others : MySQL / MariaDB / IntelliJ / VSC
                 </ul>
             </div>
         </div>
@@ -115,7 +115,7 @@
             <div class="col">
                 <ol style="padding-left: 1rem;margin-bottom:0px;">
                     <li>보편적인 형태가 아닌 게시판( = 사용 이미지를 선택적으로 메인 페이지에 노출)을 주문 받아 구현이 어려웠었는데, 로직을 스스로 구현하면서 사용 언어들의 응용력이 향상 되었음.
-                    <li>카테고리/검색과 같은 기능으로 게시판을 읽어오는 로직의 다양화가 필요 했는데, 이 과정 속에서 myBatis 및 SQL에 대한 이해도가 향상 되었음
+                    <li>카테고리/검색과 같은 기능으로 게시판을 읽어오는 로직의 다양화가 필요 했는데, 이 과정 속에서 MyBatis 및 SQL에 대한 이해도가 향상 되었음
                     <li>기능 구현 중, 반복되는 코드가 자주 등장 했는데 배열이나 반복문 등을 이용한 코드 효율화의 중요성을 꺠닫게 됨
                 </ol>
             </div>
